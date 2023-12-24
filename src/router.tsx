@@ -1,8 +1,8 @@
 import Layout from "components/Layout";
-// import { lazy } from "react";
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { lazy } from "react";
+import { createBrowserRouter } from "react-router-dom";
 
-// const page = lazy(() => import("./page-path"));
+const HomePage = lazy(() => import("./pages/HomePage"));
 
 export const ROUTES = {
   HOME: "/",
@@ -15,7 +15,7 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Navigate to={ROUTES.HOME} replace={true} />,
+        element: <HomePage />,
       },
       {
         // path: ROUTES.PAGE,
