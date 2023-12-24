@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { HelmetProvider } from "react-helmet-async";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "styles/theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,9 +15,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
+      <ThemeProvider theme={theme}>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );

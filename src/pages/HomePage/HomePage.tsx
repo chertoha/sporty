@@ -1,3 +1,4 @@
+import Home from "components/Home";
 import { Helmet } from "react-helmet-async";
 
 const HomePage = () => {
@@ -7,7 +8,7 @@ const HomePage = () => {
         <title>Title</title>
         <meta name="description" content="description content" />
       </Helmet>
-      <div>Home Page</div>
+      <Home />
     </>
   );
 };

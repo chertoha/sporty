@@ -16,6 +16,7 @@
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "axios": "^1.6.2",
+    "commander": "^11.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.4",
@@ -32,7 +33,8 @@
     "start": "set PORT=8000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gen": "node gen.js -f ./src/components -c"
   },
   "eslintConfig": {
     "extends": [
