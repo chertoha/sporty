@@ -1,6 +1,6 @@
-import { colors, createTheme, PaletteColorOptions } from "@mui/material";
+import { colors, createTheme } from "@mui/material";
 
-const theme = createTheme({
+export const theme = createTheme({
   //   status: {
   //     danger: orange[500],
   //   },
