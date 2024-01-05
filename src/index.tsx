@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "styles/index.css";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { HelmetProvider } from "react-helmet-async";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material";
 import { theme } from "styles/theme";
 
 const root = ReactDOM.createRoot(
