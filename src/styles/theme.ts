@@ -1,6 +1,9 @@
+import { Theme } from "@emotion/react";
 import { colors, createTheme } from "@mui/material";
 
 export const theme = createTheme({
+  spacing: 2,
+
   palette: {
     // secondary: {
     //   main: colors.orange[500],
@@ -14,6 +17,7 @@ export const theme = createTheme({
       main: "#F4F4F4",
       dark: "#242424",
       light: "#FFFFFF",
+      contrastText: "#242424",
       // darker: "#555555",
     },
 
@@ -23,15 +27,15 @@ export const theme = createTheme({
   components: {
     MuiTextField: {
       styleOverrides: {
-        root: ({ ownerState }: { ownerState: any }) => ({
+        root: ({ ownerState, theme }: { ownerState: any; theme: any }) => ({
           ...(ownerState.variant === "outlined" && {
             backgroundColor: "transparent",
             borderRadius: 30,
             border: "1px solid",
-            borderColor: "#ffffff",
+            borderColor: theme.palette.bg.main,
 
             ".MuiOutlinedInput-root .MuiOutlinedInput-input": {
-              color: "#ffffff",
+              color: theme.palette.text.secondary,
             },
 
             "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
@@ -57,39 +61,39 @@ export const theme = createTheme({
       },
 
       styleOverrides: {
-        root: ({ ownerState }: { ownerState: any }) => ({
+        root: ({ ownerState, theme }: { ownerState: any; theme: any }) => ({
           ...{
             textTransform: "none",
-            borderColor: "#ffffff",
+            borderColor: theme.palette.bg.main,
             borderRadius: 30,
-            color: "#ffffff",
+            color: theme.palette.text.secondary,
             backgroundColor: "transparent",
             "&:hover": {
-              backgroundColor: "#ffffff",
-              borderColor: "#ffffff",
-              color: "#000000",
+              backgroundColor: theme.palette.bg.main,
+              borderColor: theme.palette.bg.main,
+              color: theme.palette.text.primary,
             },
           },
 
           ...(ownerState.variant === "contained" && {
-            borderColor: "#ffffff",
-            backgroundColor: "#ffffff",
-            color: "#000000",
+            borderColor: theme.palette.bg.main,
+            backgroundColor: theme.palette.bg.main,
+            color: theme.palette.text.primary,
             border: "1px solid",
 
             "&:hover": {
               backgroundColor: "transparent",
-              borderColor: "#ffffff",
-              color: "#ffffff",
+              borderColor: theme.palette.bg.main,
+              color: theme.palette.text.secondary,
             },
           }),
 
           ...(ownerState.variant === "text" && {
-            color: "#000000",
+            color: theme.palette.text.primary,
 
             "&:hover": {
-              backgroundColor: "#000000",
-              color: "#ffffff",
+              backgroundColor: theme.palette.bg.dark,
+              color: theme.palette.text.secondary,
             },
           }),
         }),
@@ -99,3 +103,4 @@ export const theme = createTheme({
 });
 
 // Add customized chip, icon button,
+// add typography

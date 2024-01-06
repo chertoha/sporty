@@ -21,6 +21,7 @@ declare module "@mui/material/styles" {
     // status: {
     //   danger: string;
     // };
+    // palette: Palette;
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {

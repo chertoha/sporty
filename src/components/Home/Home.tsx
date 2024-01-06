@@ -10,17 +10,21 @@ interface IHomeProps {
 const Home: FC<IHomeProps> = () => {
   return (
     <>
-      <Box sx={{ backgroundColor: "#242424", color: "white" }}>
+      <Box bgcolor="bg.dark">
         Home component
-        <Button variant="text" endIcon={<ArrowForwardIcon />}>
-          Start
-        </Button>
         <Button variant="contained" endIcon={<FavoriteBorderOutlinedIcon />}>
           Add to favorites
         </Button>
         <Button variant="outlined">Give a rating</Button>
         <FormControl>
-          <TextField variant="outlined" placeholder="Email" type="email" />
+          <TextField
+            variant="outlined"
+            placeholder="Email"
+            type="email"
+            sx={{
+              "& .MuiOutlinedInput-input": { py: 3, px: 8, fontSize: "xs" },
+            }}
+          />
 
           <TextField
             variant="outlined"
@@ -30,8 +34,15 @@ const Home: FC<IHomeProps> = () => {
           />
         </FormControl>
       </Box>
+
+      <Button variant="text" endIcon={<ArrowForwardIcon />}>
+        Start
+      </Button>
     </>
   );
 };
 
 export default Home;
+
+// input paddings
+// routing for sub routes
