@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Chip,
+  Container,
   FormControl,
   TextField,
   Typography,
@@ -76,10 +77,38 @@ const Home: FC<IHomeProps> = () => {
 
       <Chip label="#Sport" variant="outlined" /> */}
       <Hero />
+      {/* <HomeCardContent /> */}
 
-      <Suspense>
-        <Outlet />
-      </Suspense>
+      <Box component="section">
+        <Container sx={{ outline: "1px solid grey" }}>
+          <Box>Toolbar</Box>
+
+          <Box
+            sx={{
+              display: { xs: "block", xl: "flex" },
+              flexDirection: { xl: "row-reverse" },
+              columnGap: { xl: 16 },
+            }}
+          >
+            <Box
+              sx={{
+                width: {
+                  xs: "100%",
+                  xl: 900,
+                },
+                flexShrink: 0,
+                outline: "1px solid red",
+              }}
+            >
+              <Suspense>
+                <Outlet />
+              </Suspense>
+            </Box>
+
+            <Box sx={{ outline: "1px solid green", width: "100%" }}>Quotes</Box>
+          </Box>
+        </Container>
+      </Box>
     </>
   );
 };

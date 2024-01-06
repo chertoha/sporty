@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React, { FC } from "react";
 
 interface IHeroProps {
@@ -6,7 +6,11 @@ interface IHeroProps {
 }
 
 const Hero: FC<IHeroProps> = () => {
-  return <Container sx={{ outline: "1px solid blue" }}>Hero</Container>;
+  return (
+    <Box component="section">
+      <Container sx={{ outline: "1px solid blue" }}>Hero</Container>
+    </Box>
+  );
 };
 
 export default Hero;
