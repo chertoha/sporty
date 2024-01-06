@@ -1,18 +1,51 @@
-import { colors, createTheme } from "@mui/material";
+import buttonConfig from "./themeConfig/button.config";
+import { createTheme } from "@mui/material";
+import textFieldConfig from "./themeConfig/textField.config";
+import chipConfig from "./themeConfig/chip.config";
+import typographyConfig from "./themeConfig/typography.config";
 
 export const theme = createTheme({
-  //   status: {
-  //     danger: orange[500],
-  //   },
+  typography: {
+    fontFamily: ["DM Sans", "sans-serif"].join(","),
 
+    cardtitle: {
+      fontSize: 20,
+      lineHeight: 1,
+    },
+  },
+
+  //Breakpoints
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 375,
+      md: 768,
+      lg: 1080,
+      xl: 1440,
+    },
+  },
+
+  //Spacing
+  spacing: 2,
+
+  //Palette
   palette: {
-    secondary: {
-      main: colors.orange[500],
+    bg: {
+      main: "#F4F4F4",
+      dark: "#242424",
+      light: "#FFFFFF",
+      contrastText: "#242424",
+      // darker: "#555555",
     },
 
-    neutral: {
-      main: colors.grey[500],
-      darker: colors.grey[700],
-    },
+    text: { primary: "#242424", secondary: "#F4F4F4" },
+  },
+
+  //Components
+  components: {
+    ...textFieldConfig,
+    ...buttonConfig,
+    ...chipConfig,
+    ...typographyConfig,
   },
 });
