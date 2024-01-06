@@ -30,18 +30,20 @@ declare module "@mui/material/styles" {
   }
 
   interface Palette {
-    neutral?: PaletteColor;
-  }
-
-  interface PaletteColor {
-    darker?: string;
+    // neutral?: PaletteColor;
+    bg?: Palette["primary"];
   }
 
   interface PaletteOptions {
-    neutral?: PaletteColorOptions;
+    // neutral?: PaletteColorOptions;
+    bg?: PaletteOptions["primary"];
+  }
+
+  interface PaletteColor {
+    // darker?: string;
   }
 
   interface SimplePaletteColorOptions {
-    darker?: string;
+    // darker?: string;
   }
 }

@@ -1,28 +1,26 @@
-import { BorderColor } from "@mui/icons-material";
 import { colors, createTheme } from "@mui/material";
 
 export const theme = createTheme({
-  //   status: {
-  //     danger: orange[500],
-  //   },
-  // shadows: ["none"],
-
   palette: {
-    secondary: {
-      main: colors.orange[500],
+    // secondary: {
+    //   main: colors.orange[500],
+    // },
+    // neutral: {
+    //   main: colors.grey[500],
+    //   darker: colors.grey[700],
+    // },
+
+    bg: {
+      main: "#F4F4F4",
+      dark: "#242424",
+      light: "#FFFFFF",
+      // darker: "#555555",
     },
 
-    neutral: {
-      main: colors.grey[500],
-      darker: colors.grey[700],
-    },
+    text: { primary: "#242424", secondary: "#F4F4F4" },
   },
 
   components: {
-    // MuiButtonBase: {
-    //   defaultProps: { disableRipple: true },
-    // },
-
     MuiTextField: {
       styleOverrides: {
         root: ({ ownerState }: { ownerState: any }) => ({
@@ -99,3 +97,5 @@ export const theme = createTheme({
     },
   },
 });
+
+// Add customized chip, icon button,
