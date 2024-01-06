@@ -1,94 +1,46 @@
-import {
-  Box,
-  Button,
-  Chip,
-  Container,
-  FormControl,
-  TextField,
-  Typography,
-} from "@mui/material";
-import React, { FC, Suspense, useEffect } from "react";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Outlet, useLocation, useNavigate } from "react-router";
-import { ROUTES } from "router";
+import React, { FC, Suspense } from "react";
 import Hero from "components/Hero";
+import { Box, Container, Stack, styled, Typography } from "@mui/material";
+import { Outlet } from "react-router";
+import { NavLink } from "react-router-dom";
+import { ROUTES } from "router";
 
 interface IHomeProps {
   //...
 }
 
-const Home: FC<IHomeProps> = () => {
-  // const { pathname } = useLocation();
-  // const navigate = useNavigate();
+const StyledNavLink = styled(NavLink)(({ theme }) => ({
+  // ...theme.components?.MuiLink,
+  // color: "red",
+  "&.active": { color: "red" },
+}));
 
-  // useEffect(() => {
-  //   if (pathname === ROUTES.HOME) {
-  //     navigate(ROUTES.EXERCISES, { replace: true });
-  //   }
-  // }, [pathname, navigate]);
+const Home: FC<IHomeProps> = () => {
   return (
     <>
-      {/* <div
-        style={{
-          width: 300,
-          height: 300,
-          border: "5px solid",
-          backgroundColor: "tomato",
-          padding: 20,
-        }}
-      ></div> */}
-      {/* <Typography variant="subtitle2">subtitle2</Typography>
-
-      <Typography variant="cardtitle">cardtitle</Typography>
-
-      <Typography variant="body1" component="h1">
-        Typography
-      </Typography>
-
-      <Box bgcolor="bg.dark">
-        Home component
-        <Button variant="contained" endIcon={<FavoriteBorderOutlinedIcon />}>
-          Add to favorites
-        </Button>
-        <Button variant="outlined">Give a rating</Button>
-        <FormControl>
-          <TextField
-            variant="outlined"
-            placeholder="Email"
-            type="email"
-            sx={{
-              "& .MuiOutlinedInput-input": { py: 3, px: 8, fontSize: "xs" },
-            }}
-          />
-
-          <TextField
-            variant="outlined"
-            placeholder="Your comment"
-            multiline
-            rows={4}
-          />
-        </FormControl>
-      </Box>
-
-      <Button variant="text" endIcon={<ArrowForwardIcon />}>
-        Start
-      </Button>
-
-      <Chip label="#Sport" variant="outlined" /> */}
       <Hero />
-      {/* <HomeCardContent /> */}
 
       <Box component="section">
         <Container sx={{ outline: "1px solid grey" }}>
-          <Box>Toolbar</Box>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box>
+              <Typography variant="h2">Exercises</Typography>
+            </Box>
 
-          <Box
-            sx={{
-              display: { xs: "block", xl: "flex" },
-              flexDirection: { xl: "row-reverse" },
-              columnGap: { xl: 16 },
-            }}
+            <Stack direction="row" spacing={10}>
+              <StyledNavLink to={ROUTES.MUSCLES}>Muscles</StyledNavLink>
+              <StyledNavLink to={ROUTES.BODY_PARTS}>Body parts</StyledNavLink>
+              <StyledNavLink to={ROUTES.EQUIPMENT}>Equipment</StyledNavLink>
+            </Stack>
+          </Stack>
+
+          <Stack
+            direction={{ xs: "column", xl: "row-reverse" }}
+            spacing={{ xl: 16 }}
           >
             <Box
               sx={{
@@ -106,7 +58,7 @@ const Home: FC<IHomeProps> = () => {
             </Box>
 
             <Box sx={{ outline: "1px solid green", width: "100%" }}>Quotes</Box>
-          </Box>
+          </Stack>
         </Container>
       </Box>
     </>
@@ -114,5 +66,3 @@ const Home: FC<IHomeProps> = () => {
 };
 
 export default Home;
-
-// routing for sub routes

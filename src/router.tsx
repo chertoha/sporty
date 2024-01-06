@@ -1,4 +1,5 @@
 import Layout from "components/Layout";
+import TestPage from "pages/TestPage";
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -11,8 +12,6 @@ const EquipmentPage = lazy(() => import("./pages/EquipmentPage"));
 
 export const ROUTES = {
   HOME: "/",
-
-  // EXERCISES: "/exercises",
   MUSCLES: "/muscles",
   BODY_PARTS: "/bodyparts",
   EQUIPMENT: "/equipment",
@@ -50,6 +49,11 @@ const routes = [
       {
         path: ROUTES.FAVORITES,
         element: <FavoritesPage />,
+      },
+      {
+        //TEMP TEST ROUTE
+        path: "/test",
+        element: <TestPage />,
       },
     ],
   },
