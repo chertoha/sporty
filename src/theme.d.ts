@@ -1,19 +1,3 @@
-// // import { ThemeOptions } from "@mui/material/styles";
-
-// declare module "@mui/material/styles" {
-//   interface Theme {
-//     // status: {
-//     //   danger: string;
-//     // };
-//   }
-//   // allow configuration using `createTheme`
-//   interface ThemeOptions {
-//     // status?: {
-//     //   danger?: string;
-//     // };
-//   }
-// }
-
 import { PaletteColorOptions } from "@mui/material";
 
 declare module "@mui/material/styles" {
@@ -46,5 +30,19 @@ declare module "@mui/material/styles" {
 
   interface SimplePaletteColorOptions {
     // darker?: string;
+  }
+
+  interface TypographyVariants {
+    cardtitle: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    cardtitle?: React.CSSProperties;
+  }
+}
+
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    cardtitle: true;
   }
 }

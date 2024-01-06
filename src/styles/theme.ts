@@ -1,18 +1,35 @@
-import { Theme } from "@emotion/react";
-import { colors, createTheme } from "@mui/material";
+import buttonConfig from "./themeConfig/button.config";
+import { createTheme } from "@mui/material";
+import textFieldConfig from "./themeConfig/textField.config";
+import chipConfig from "./themeConfig/chip.config";
+import typographyConfig from "./themeConfig/typography.config";
 
 export const theme = createTheme({
+  typography: {
+    fontFamily: ["DM Sans", "sans-serif"].join(","),
+
+    cardtitle: {
+      fontSize: 20,
+      lineHeight: 1,
+    },
+  },
+
+  //Breakpoints
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 375,
+      md: 768,
+      lg: 1080,
+      xl: 1440,
+    },
+  },
+
+  //Spacing
   spacing: 2,
 
+  //Palette
   palette: {
-    // secondary: {
-    //   main: colors.orange[500],
-    // },
-    // neutral: {
-    //   main: colors.grey[500],
-    //   darker: colors.grey[700],
-    // },
-
     bg: {
       main: "#F4F4F4",
       dark: "#242424",
@@ -24,83 +41,11 @@ export const theme = createTheme({
     text: { primary: "#242424", secondary: "#F4F4F4" },
   },
 
+  //Components
   components: {
-    MuiTextField: {
-      styleOverrides: {
-        root: ({ ownerState, theme }: { ownerState: any; theme: any }) => ({
-          ...(ownerState.variant === "outlined" && {
-            backgroundColor: "transparent",
-            borderRadius: 30,
-            border: "1px solid",
-            borderColor: theme.palette.bg.main,
-
-            ".MuiOutlinedInput-root .MuiOutlinedInput-input": {
-              color: theme.palette.text.secondary,
-            },
-
-            "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: "transparent",
-            },
-            "& .MuiOutlinedInput-root.Mui-focused  .MuiOutlinedInput-notchedOutline":
-              {
-                borderColor: "transparent",
-              },
-          }),
-
-          ...(ownerState.multiline && {
-            borderRadius: 15,
-          }),
-        }),
-      },
-    },
-
-    MuiButton: {
-      defaultProps: {
-        disableRipple: true,
-        disableElevation: true,
-      },
-
-      styleOverrides: {
-        root: ({ ownerState, theme }: { ownerState: any; theme: any }) => ({
-          ...{
-            textTransform: "none",
-            borderColor: theme.palette.bg.main,
-            borderRadius: 30,
-            color: theme.palette.text.secondary,
-            backgroundColor: "transparent",
-            "&:hover": {
-              backgroundColor: theme.palette.bg.main,
-              borderColor: theme.palette.bg.main,
-              color: theme.palette.text.primary,
-            },
-          },
-
-          ...(ownerState.variant === "contained" && {
-            borderColor: theme.palette.bg.main,
-            backgroundColor: theme.palette.bg.main,
-            color: theme.palette.text.primary,
-            border: "1px solid",
-
-            "&:hover": {
-              backgroundColor: "transparent",
-              borderColor: theme.palette.bg.main,
-              color: theme.palette.text.secondary,
-            },
-          }),
-
-          ...(ownerState.variant === "text" && {
-            color: theme.palette.text.primary,
-
-            "&:hover": {
-              backgroundColor: theme.palette.bg.dark,
-              color: theme.palette.text.secondary,
-            },
-          }),
-        }),
-      },
-    },
+    ...textFieldConfig,
+    ...buttonConfig,
+    ...chipConfig,
+    ...typographyConfig,
   },
 });
-
-// Add customized chip, icon button,
-// add typography
