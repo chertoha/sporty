@@ -6,15 +6,25 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { FC } from "react";
+import React, { FC, Suspense, useEffect } from "react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Outlet, useLocation, useNavigate } from "react-router";
+import { ROUTES } from "router";
 
 interface IHomeProps {
   //...
 }
 
 const Home: FC<IHomeProps> = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (pathname === ROUTES.HOME) {
+      navigate(ROUTES.EXERCISES, { replace: true });
+    }
+  }, [pathname, navigate]);
   return (
     <>
       {/* <div
@@ -26,8 +36,7 @@ const Home: FC<IHomeProps> = () => {
           padding: 20,
         }}
       ></div> */}
-
-      <Typography variant="subtitle2">subtitle2</Typography>
+      {/* <Typography variant="subtitle2">subtitle2</Typography>
 
       <Typography variant="cardtitle">cardtitle</Typography>
 
@@ -64,7 +73,11 @@ const Home: FC<IHomeProps> = () => {
         Start
       </Button>
 
-      <Chip label="#Sport" variant="outlined" />
+      <Chip label="#Sport" variant="outlined" /> */}
+      HOME part
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

@@ -5,6 +5,7 @@ const Layout = () => {
   return (
     <div>
       <header>Header</header>
+
       <main>
         <Suspense>
           <Outlet />
