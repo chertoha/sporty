@@ -75,8 +75,9 @@ const Home: FC<IHomeProps> = () => {
 
       <Chip label="#Sport" variant="outlined" /> */}
       HOME part
-      <Outlet />
-      {/* <Suspense></Suspense> */}
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

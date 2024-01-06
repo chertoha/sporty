@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, Suspense } from "react";
 import { Outlet } from "react-router";
 
 interface IExercisesProps {
@@ -9,7 +9,9 @@ const Exercises: FC<IExercisesProps> = () => {
   return (
     <div>
       Exercises component
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

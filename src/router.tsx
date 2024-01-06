@@ -5,6 +5,9 @@ import { createBrowserRouter } from "react-router-dom";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
 const ExercisePage = lazy(() => import("./pages/ExercisePage"));
+const MusclesPage = lazy(() => import("./pages/MusclesPage"));
+const BodypartsPage = lazy(() => import("./pages/BodypartsPage"));
+const EquipmentPage = lazy(() => import("./pages/EquipmentPage"));
 
 export const ROUTES = {
   HOME: "/",
@@ -23,7 +26,6 @@ const routes = [
     element: <Layout />,
     children: [
       {
-        // index: true,
         path: ROUTES.HOME,
         element: <HomePage />,
         children: [
@@ -33,15 +35,15 @@ const routes = [
             children: [
               {
                 path: ROUTES.MUSCLES,
-                element: <div>EXERCISES_MUSCLES</div>,
+                element: <MusclesPage />,
               },
               {
                 path: ROUTES.BODY_PARTS,
-                element: <div>EXERCISES_BODY_PARTS</div>,
+                element: <BodypartsPage />,
               },
               {
                 path: ROUTES.EQUIPMENT,
-                element: <div>EXERCISES_EQUIPMENT</div>,
+                element: <EquipmentPage />,
               },
             ],
           },
