@@ -1,10 +1,9 @@
-import { Components, Theme } from "@mui/material";
+import { Components, Theme } from "@mui/material/styles";
 
 const typographyConfig: Components<Omit<Theme, "components">> | undefined = {
   MuiTypography: {
     defaultProps: {
       variantMapping: {
-        // Map the new variant to render a <h1> by default
         cardtitle: "p",
       },
     },
