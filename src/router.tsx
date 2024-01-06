@@ -12,10 +12,10 @@ const EquipmentPage = lazy(() => import("./pages/EquipmentPage"));
 export const ROUTES = {
   HOME: "/",
 
-  EXERCISES: "/exercises",
-  MUSCLES: "/exercises/muscles",
-  BODY_PARTS: "/exercises/bodyparts",
-  EQUIPMENT: "/exercises/equipment",
+  // EXERCISES: "/exercises",
+  MUSCLES: "/muscles",
+  BODY_PARTS: "/bodyparts",
+  EQUIPMENT: "/equipment",
 
   FAVORITES: "/favorites",
 };
@@ -30,22 +30,20 @@ const routes = [
         element: <HomePage />,
         children: [
           {
-            path: ROUTES.EXERCISES,
+            index: true,
             element: <ExercisePage />,
-            children: [
-              {
-                path: ROUTES.MUSCLES,
-                element: <MusclesPage />,
-              },
-              {
-                path: ROUTES.BODY_PARTS,
-                element: <BodypartsPage />,
-              },
-              {
-                path: ROUTES.EQUIPMENT,
-                element: <EquipmentPage />,
-              },
-            ],
+          },
+          {
+            path: ROUTES.MUSCLES,
+            element: <MusclesPage />,
+          },
+          {
+            path: ROUTES.BODY_PARTS,
+            element: <BodypartsPage />,
+          },
+          {
+            path: ROUTES.EQUIPMENT,
+            element: <EquipmentPage />,
           },
         ],
       },

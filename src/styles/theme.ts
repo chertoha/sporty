@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material";
 import textFieldConfig from "./themeConfig/textField.config";
 import chipConfig from "./themeConfig/chip.config";
 import typographyConfig from "./themeConfig/typography.config";
+import containerConfig from "./themeConfig/container.config";
 
 export const theme = createTheme({
   typography: {
@@ -47,5 +48,6 @@ export const theme = createTheme({
     ...buttonConfig,
     ...chipConfig,
     ...typographyConfig,
+    ...containerConfig,
   },
 });

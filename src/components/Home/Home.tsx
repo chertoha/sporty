@@ -11,20 +11,21 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Outlet, useLocation, useNavigate } from "react-router";
 import { ROUTES } from "router";
+import Hero from "components/Hero";
 
 interface IHomeProps {
   //...
 }
 
 const Home: FC<IHomeProps> = () => {
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
+  // const { pathname } = useLocation();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    if (pathname === ROUTES.HOME) {
-      navigate(ROUTES.EXERCISES, { replace: true });
-    }
-  }, [pathname, navigate]);
+  // useEffect(() => {
+  //   if (pathname === ROUTES.HOME) {
+  //     navigate(ROUTES.EXERCISES, { replace: true });
+  //   }
+  // }, [pathname, navigate]);
   return (
     <>
       {/* <div
@@ -74,7 +75,8 @@ const Home: FC<IHomeProps> = () => {
       </Button>
 
       <Chip label="#Sport" variant="outlined" /> */}
-      HOME part
+      <Hero />
+
       <Suspense>
         <Outlet />
       </Suspense>

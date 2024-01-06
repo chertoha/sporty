@@ -8,7 +8,7 @@ interface IHeaderProps {
 const Header: FC<IHeaderProps> = () => {
   return (
     <header>
-      <Container>Header</Container>
+      <Container sx={{ outline: "1px solid tomato" }}>Header</Container>
     </header>
   );
 };
