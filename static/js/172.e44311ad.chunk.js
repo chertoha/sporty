@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksporty=self.webpackChunksporty||[]).push([[172],{8172:(s,e,c)=>{c.r(e),c.d(e,{default:()=>n});c(2791);var r=c(184);const t=()=>(0,r.jsx)("div",{children:"Exercises component"}),n=()=>(0,r.jsx)(t,{})}}]);
+//# sourceMappingURL=172.e44311ad.chunk.js.map
