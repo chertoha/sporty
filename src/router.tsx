@@ -1,3 +1,4 @@
+import CardSection from "components/CardSection";
 import Layout from "components/Layout";
 import TestPage from "pages/TestPage";
 import { lazy } from "react";
@@ -5,10 +6,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
-const ExercisePage = lazy(() => import("./pages/ExercisePage"));
-const MusclesPage = lazy(() => import("./pages/MusclesPage"));
-const BodypartsPage = lazy(() => import("./pages/BodypartsPage"));
-const EquipmentPage = lazy(() => import("./pages/EquipmentPage"));
+// const ExercisePage = lazy(() => import("./pages/ExercisePage"));
 
 export const ROUTES = {
   HOME: "/",
@@ -17,7 +15,7 @@ export const ROUTES = {
   EQUIPMENT: "/equipment",
 
   FAVORITES: "/favorites",
-};
+} as const;
 
 const routes = [
   {
@@ -30,19 +28,19 @@ const routes = [
         children: [
           {
             index: true,
-            element: <ExercisePage />,
+            element: <CardSection filter="Muscles" />,
           },
           {
             path: ROUTES.MUSCLES,
-            element: <MusclesPage />,
+            element: <CardSection filter="Muscles" />,
           },
           {
             path: ROUTES.BODY_PARTS,
-            element: <BodypartsPage />,
+            element: <CardSection filter="Body parts" />,
           },
           {
             path: ROUTES.EQUIPMENT,
-            element: <EquipmentPage />,
+            element: <CardSection filter="Equipment" />,
           },
         ],
       },
