@@ -35,8 +35,4 @@ export const exercisesApi = createApi({
   }),
 });
 
-export const {
-  //   useGetSettlementsQuery,
-  //   useGetWarehousesQuery,
-  //   useLazyGetWarehousesQuery,
-} = exercisesApi;
+export const {} = exercisesApi;
