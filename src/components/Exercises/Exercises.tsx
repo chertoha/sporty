@@ -1,19 +1,11 @@
-import React, { FC, Suspense } from "react";
-import { Outlet } from "react-router";
+import React, { FC } from "react";
 
 interface IExercisesProps {
   //...
 }
 
 const Exercises: FC<IExercisesProps> = () => {
-  return (
-    <div>
-      Exercises component
-      <Suspense>
-        <Outlet />
-      </Suspense>
-    </div>
-  );
+  return <div>Exercises component</div>;
 };
 
 export default Exercises;
