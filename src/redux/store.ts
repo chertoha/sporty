@@ -1,12 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { exercisesApi } from "./exercises/exercisesApi";
+import { filtersApi } from "./filters/filtersApi";
+import { quoteApi } from "./quote/quoteApi";
+import { subscriptionApi } from "./subscription/subscriptionApi";
 
 export const store = configureStore({
   reducer: {
-    // [api.reducerPath]: api.reducer,
+    [filtersApi.reducerPath]: filtersApi.reducer,
+    [exercisesApi.reducerPath]: exercisesApi.reducer,
+    [quoteApi.reducerPath]: quoteApi.reducer,
+    [subscriptionApi.reducerPath]: subscriptionApi.reducer,
   },
   middleware(getDefaultMiddleware) {
-    return getDefaultMiddleware();
-    //   .concat(api.middleware)
+    return getDefaultMiddleware()
+      .concat(filtersApi.middleware)
+      .concat(exercisesApi.middleware)
+      .concat(quoteApi.middleware)
+      .concat(subscriptionApi.middleware);
   },
 });
 
