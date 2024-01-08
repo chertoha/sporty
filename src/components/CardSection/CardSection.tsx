@@ -1,3 +1,4 @@
+import Exercises from "components/Exercises";
 import { FilterValues, filterValues } from "helpers/filterValues";
 import {
   FILTERS_DEFAULT_LIMIT,
@@ -21,13 +22,15 @@ const CardSection: FC<ICardSectionProps> = ({ filter }) => {
     limit: FILTERS_DEFAULT_LIMIT,
   });
 
-  if (isFetching) return <div>Loader component...</div>;
-  if (isError) return <div>Error Component</div>;
+  if (isFetching) return <div>Loader component... (CardSection)</div>;
+  if (isError) return <div>Error Component (CardSection)</div>;
   if (!data) return null;
 
   console.log(data);
 
-  return <div>Exercise card - </div>;
+  if (0) return <div>Filter</div>;
+
+  return <Exercises />;
 };
 
 export default CardSection;
