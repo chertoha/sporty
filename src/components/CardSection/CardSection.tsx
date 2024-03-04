@@ -1,5 +1,5 @@
 import Exercises from "components/Exercises";
-import { FilterValues, filterValues } from "helpers/filterValues";
+import { FilterValues } from "helpers/filterValues";
 import {
   FILTERS_DEFAULT_LIMIT,
   FILTERS_DEFAULT_PAGE,
