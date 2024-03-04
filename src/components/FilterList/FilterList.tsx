@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   ButtonBase,
+  Grid,
   // ImageList,
   // ImageListItem,
   Typography,
@@ -9,51 +10,109 @@ import {
 import React, { FC } from "react";
 import { Filter } from "types/dataTypes";
 import { styled } from "@mui/material/styles";
+import { theme } from "styles/theme";
 
 interface IFilterListProps {
   list: Filter[];
 }
 
 const Image = styled("img")(({ theme }) => ({
-  width: 50,
-  height: 50,
-  // position: "absolute",
-  // left: 0,
-  // right: 0,
-  // top: 0,
-  // bottom: 0,
-  // display: "flex",
-  // alignItems: "center",
-  // justifyContent: "center",
-  // color: theme.palette.common.white,
+  // width: 50,
+  // height: 50,
+
+  display: "block",
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
 
   [theme.breakpoints.up("md")]: {},
 
   [theme.breakpoints.up("xl")]: {},
 }));
 
+// const List = styled("ul")(theme => ({
+
+//   [theme.breakpoints.up("md")]: {},
+
+//   [theme.breakpoints.up("xl")]: {},
+// }));
+
 const FilterList: FC<IFilterListProps> = ({ list }) => {
   console.log(list);
 
   return (
     <Box>
-      <Box component="ul">
+      <Grid
+        container
+        component="ul"
+        spacing="15px"
+      >
         {list.map(({ imgURL, name, filter }) => (
-          <Box
+          <Grid
             component="li"
             key={imgURL}
+            item
+            xs={12}
+            md={4}
           >
-            <ButtonBase sx={{}}>
+            <ButtonBase
+              sx={{
+                position: "relative",
+                borderRadius: 6,
+                overflow: "hidden",
+                width: "100%",
+                height: {
+                  xs: 225,
+                  xl: 242,
+                },
+                "&::after": {
+                  position: "absolute",
+                  content: `''`,
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  bgcolor: "rgba(17,17,17,0.5)",
+                },
+              }}
+            >
               <Image
                 src={imgURL}
                 alt={name}
               />
-              <Typography component="h3">{name}</Typography>
-              <Typography>{filter}</Typography>
+
+              <Box
+                sx={{
+                  color: "text.secondary",
+                  position: "absolute",
+                  zIndex: "2",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                }}
+              >
+                <Typography
+                  component="h3"
+                  variant="cardtitle"
+                  sx={{
+                    ":first-letter": {
+                      textTransform: "uppercase",
+                    },
+                  }}
+                >
+                  {name}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="rgba(244,244,244,0.4)"
+                >
+                  {filter}
+                </Typography>
+              </Box>
             </ButtonBase>
-          </Box>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
 
       {/* <ImageList
         sx={{}}

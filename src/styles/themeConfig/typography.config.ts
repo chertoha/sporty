@@ -27,7 +27,23 @@ const typographyConfig: Components<Omit<Theme, "components">> | undefined = {
 
         // cardtitle
         ...(ownerState.variant === "cardtitle" && {
+          fontFamily: ["DM Sans", "sans-serif"].join(","),
+          fontWeight: 400,
           [theme.breakpoints.up("md")]: { fontSize: 24, lineHeight: 1.33 },
+        }),
+
+        // body1
+        ...(ownerState.variant === "body1" && {
+          fontSize: 14,
+          fontWeight: 400,
+          lineHeight: 1.286,
+        }),
+
+        // body2
+        ...(ownerState.variant === "body2" && {
+          fontSize: 12,
+          fontWeight: 400,
+          lineHeight: 1.5,
         }),
       }),
     },

@@ -51,3 +51,11 @@ export const theme = createTheme({
     ...containerConfig,
   },
 });
+
+/*
+Dark colors
+#242424 black
+
+
+
+*/
