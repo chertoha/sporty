@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunksporty=self.webpackChunksporty||[]).push([[822],{1822:(s,e,c)=>{c.r(e),c.d(e,{default:()=>u});c(2791);var r=c(184);const t=()=>(0,r.jsx)("div",{children:"Muscles 1"}),u=()=>(0,r.jsx)(t,{})}}]);
-//# sourceMappingURL=822.1687b952.chunk.js.map
