@@ -2,11 +2,11 @@ import {
   EXERCISES_DEFAULT_LIMIT,
   EXERCISES_DEFAULT_PAGE,
 } from "helpers/queryConfig";
-import React, { FC, useEffect } from "react";
+import { FC } from "react";
 import {
-  useGetExerciseByIdQuery,
+  // useGetExerciseByIdQuery,
   useGetExercisesQuery,
-  useRateExerciseMutation,
+  // useRateExerciseMutation,
 } from "../../redux/exercises/exercisesApi";
 
 interface IExercisesProps {
