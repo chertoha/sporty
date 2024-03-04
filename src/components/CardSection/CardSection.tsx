@@ -6,6 +6,7 @@ import {
 } from "helpers/queryConfig";
 import React, { FC } from "react";
 import { useGetFiltersQuery } from "../../redux/filters/filtersApi";
+import FilterList from "components/FilterList";
 // import { ROUTES } from "router";
 
 interface ICardSectionProps {
@@ -28,9 +29,15 @@ const CardSection: FC<ICardSectionProps> = ({ filter }) => {
 
   console.log(data);
 
-  if (0) return <div>Filter</div>;
+  // return null
+  return (
+    <div>
+      <FilterList list={data.results} />
+    </div>
+  );
+  // if (1) return <div>Filter</div>;
 
-  return <Exercises />;
+  // return <Exercises />;
 };
 
 export default CardSection;

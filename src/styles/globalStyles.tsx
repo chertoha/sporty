@@ -9,6 +9,12 @@ export default (
       body: {
         backgroundColor: theme.palette.bg?.main,
       },
+
+      ul: {
+        listStyleType: "none",
+        padding: 0,
+        margin: 0,
+      },
     }}
   />
 );

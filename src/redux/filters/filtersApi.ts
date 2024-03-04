@@ -1,7 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { FilterValues } from "helpers/filterValues";
 import { axiosBaseQuery } from "services/api";
-import { Filter } from "types/dataTypes";
+import { FilterResponseData } from "types/responseData";
 
 type FiltersQuery = {
   filter: FilterValues;
@@ -14,8 +14,8 @@ export const filtersApi = createApi({
 
   baseQuery: axiosBaseQuery(),
 
-  endpoints: (builder) => ({
-    getFilters: builder.query<Filter[], FiltersQuery>({
+  endpoints: builder => ({
+    getFilters: builder.query<FilterResponseData, FiltersQuery>({
       query: ({ filter, page, limit }) => ({
         url: "/filters",
         method: "GET",

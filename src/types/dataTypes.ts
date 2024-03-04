@@ -3,7 +3,7 @@ import { FilterValues } from "helpers/filterValues";
 export type Filter = {
   filter: FilterValues;
   name: string;
-  imgUrl: string;
+  imgURL: string;
 };
 
 export type Quote = {
