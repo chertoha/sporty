@@ -8,6 +8,13 @@ export default (
       // h1: { color: "red" },
       body: {
         backgroundColor: theme.palette.bg?.main,
+        // fontFamily: theme.typography.fontFamily,
+      },
+
+      ul: {
+        listStyleType: "none",
+        padding: 0,
+        margin: 0,
       },
     }}
   />

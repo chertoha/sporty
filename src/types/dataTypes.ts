@@ -1,9 +1,9 @@
-import { FilterValues } from "helpers/filterValues";
+import { FilterKey } from "helpers/filterKey";
 
 export type Filter = {
-  filter: FilterValues;
+  filter: FilterKey;
   name: string;
-  imgUrl: string;
+  imgURL: string;
 };
 
 export type Quote = {

@@ -8,17 +8,27 @@ import {
   useGetExercisesQuery,
   // useRateExerciseMutation,
 } from "../../redux/exercises/exercisesApi";
+import { FilterKeyQueryType } from "config/exerciseQueryVocabulary";
+import { Grid } from "@mui/material";
+import ExerciseCard from "components/UIKit/ExerciseCard";
+import { useWindowSize } from "hooks/useWindowSize";
 
-interface IExercisesProps {
-  //...
+interface IExercisesListProps {
+  filterKey: FilterKeyQueryType;
+  filterValue: string;
 }
 
-const Exercises: FC<IExercisesProps> = () => {
+const ExercisesList: FC<IExercisesListProps> = ({ filterKey, filterValue }) => {
+  console.log({ [filterKey]: filterValue });
+
+  const viewport = useWindowSize();
+
   /* --------------------------------------------------------------------- */
   const { data, isError, isFetching } = useGetExercisesQuery({
     muscles: "",
-    bodypart: "cardio",
+    bodypart: "",
     equipment: "",
+    [filterKey]: filterValue,
     keyword: "",
     page: EXERCISES_DEFAULT_PAGE,
     limit: EXERCISES_DEFAULT_LIMIT,
@@ -57,7 +67,33 @@ const Exercises: FC<IExercisesProps> = () => {
 
   console.log(data);
 
-  return <div>Exercises component</div>;
+  return (
+    <div>
+      <Grid
+        container
+        component="ul"
+        columnSpacing={{ md: 8 }}
+        rowSpacing={{ xs: 10, md: 16 }}
+      >
+        {data.results.map(exercise => (
+          <Grid
+            key={exercise._id}
+            component="li"
+            item
+            xs={12}
+            md={6}
+          >
+            <ExerciseCard
+              onStart={() => {}}
+              // type="favorite"
+              viewport={viewport}
+              exercise={exercise}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
+  );
 };
 
-export default Exercises;
+export default ExercisesList;

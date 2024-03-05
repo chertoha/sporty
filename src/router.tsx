@@ -28,19 +28,19 @@ const routes = [
         children: [
           {
             index: true,
-            element: <CardSection filter="Muscles" />,
+            element: <CardSection filterKey="Muscles" />,
           },
           {
             path: ROUTES.MUSCLES,
-            element: <CardSection filter="Muscles" />,
+            element: <CardSection filterKey="Muscles" />,
           },
           {
             path: ROUTES.BODY_PARTS,
-            element: <CardSection filter="Body parts" />,
+            element: <CardSection filterKey="Body parts" />,
           },
           {
             path: ROUTES.EQUIPMENT,
-            element: <CardSection filter="Equipment" />,
+            element: <CardSection filterKey="Equipment" />,
           },
         ],
       },
