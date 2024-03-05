@@ -1,16 +1,14 @@
 import {
   Box,
-  Button,
   ButtonBase,
   Grid,
   // ImageList,
   // ImageListItem,
   Typography,
 } from "@mui/material";
-import React, { FC } from "react";
+import { FC } from "react";
 import { Filter } from "types/dataTypes";
 import { styled } from "@mui/material/styles";
-import { theme } from "styles/theme";
 
 interface IFilterListProps {
   list: Filter[];
