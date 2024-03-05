@@ -5,6 +5,12 @@ import chipConfig from "./themeConfig/chip.config";
 import typographyConfig from "./themeConfig/typography.config";
 import containerConfig from "./themeConfig/container.config";
 
+export const breakpoints = {
+  mobile: 375,
+  tablet: 768,
+  desktop: 1440,
+};
+
 export const theme = createTheme({
   typography: {
     fontFamily: ["DM Sans", "sans-serif"].join(","),
@@ -19,10 +25,10 @@ export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 375,
-      md: 768,
+      sm: breakpoints.mobile,
+      md: breakpoints.tablet,
       lg: 1080,
-      xl: 1440,
+      xl: breakpoints.desktop,
     },
   },
 

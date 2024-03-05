@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Chip,
-  Grid,
   IconButton,
   Stack,
   Typography,
@@ -12,14 +11,23 @@ import { ReactComponent as StarIcon } from "assets/images/icons/star.svg";
 import { ReactComponent as ArrowIcon } from "assets/images/icons/arrow.svg";
 import { ReactComponent as RunnerIcon } from "assets/images/icons/runner.svg";
 import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
+import { Exercise } from "types/dataTypes";
+import { ViewportSize } from "hooks/useWindowSize";
+import TrimmedText from "../TrimmedText";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
   onStart: () => void;
   onDelete?: () => void;
+  exercise: Exercise;
+  viewport: ViewportSize;
 }
 
-const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise" }) => {
+const ExerciseCard: FC<IExerciseCardProps> = ({
+  type = "exercise",
+  viewport,
+  exercise: { _id, bodyPart, burnedCalories, name, rating, time, target },
+}) => {
   return (
     <Box
       sx={{
@@ -61,7 +69,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise" }) => {
               alignItems="center"
               columnGap={1}
             >
-              4.0{" "}
+              {rating.toFixed(1)}
               <Box
                 component="span"
                 display="flex"
@@ -76,7 +84,6 @@ const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise" }) => {
             <IconButton
               aria-label="delete"
               sx={{
-                // padding: 0,
                 color: "text.primary",
                 transitionProperty: "color, background-color",
                 transitionDuration: "300ms",
@@ -130,7 +137,18 @@ const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise" }) => {
         >
           <RunnerIcon />
         </Box>
-        3/4 sit-up
+        <Box
+          component="span"
+          sx={{
+            "&::first-letter": { textTransform: "uppercase" },
+          }}
+        >
+          <TrimmedText
+            viewport={viewport}
+            text={name}
+            textLength={[20, 20, 25]}
+          />
+        </Box>
       </Typography>
 
       <Stack
@@ -145,7 +163,11 @@ const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise" }) => {
           >
             Burned calories:
           </Box>{" "}
-          312 / 3 min
+          <TrimmedText
+            viewport={viewport}
+            text={`${burnedCalories} / ${time} min`}
+            textLength={[7, 10, 14]}
+          />
         </Typography>
         <Typography variant="body2">
           <Box
@@ -154,7 +176,11 @@ const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise" }) => {
           >
             Body part:
           </Box>{" "}
-          Waist
+          <TrimmedText
+            viewport={viewport}
+            text={bodyPart}
+            textLength={[7, 7, 14]}
+          />
         </Typography>
         <Typography variant="body2">
           <Box
@@ -163,7 +189,11 @@ const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise" }) => {
           >
             Target:
           </Box>{" "}
-          Abs
+          <TrimmedText
+            viewport={viewport}
+            text={target}
+            textLength={[7, 7, 14]}
+          />
         </Typography>
       </Stack>
     </Box>

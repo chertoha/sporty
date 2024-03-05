@@ -9,8 +9,9 @@ import {
   // useRateExerciseMutation,
 } from "../../redux/exercises/exercisesApi";
 import { FilterKeyQueryType } from "config/exerciseQueryVocabulary";
-import { Box, Button, Chip, Grid, Stack, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import ExerciseCard from "components/UIKit/ExerciseCard";
+import { useWindowSize } from "hooks/useWindowSize";
 
 interface IExercisesListProps {
   filterKey: FilterKeyQueryType;
@@ -19,6 +20,8 @@ interface IExercisesListProps {
 
 const ExercisesList: FC<IExercisesListProps> = ({ filterKey, filterValue }) => {
   console.log({ [filterKey]: filterValue });
+
+  const viewport = useWindowSize();
 
   /* --------------------------------------------------------------------- */
   const { data, isError, isFetching } = useGetExercisesQuery({
@@ -72,9 +75,9 @@ const ExercisesList: FC<IExercisesListProps> = ({ filterKey, filterValue }) => {
         columnSpacing={{ md: 8 }}
         rowSpacing={{ xs: 10, md: 16 }}
       >
-        {data.results.map(({ _id }) => (
+        {data.results.map(exercise => (
           <Grid
-            key={_id}
+            key={exercise._id}
             component="li"
             item
             xs={12}
@@ -83,6 +86,8 @@ const ExercisesList: FC<IExercisesListProps> = ({ filterKey, filterValue }) => {
             <ExerciseCard
               onStart={() => {}}
               // type="favorite"
+              viewport={viewport}
+              exercise={exercise}
             />
           </Grid>
         ))}
