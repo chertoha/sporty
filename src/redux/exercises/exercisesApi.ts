@@ -27,7 +27,7 @@ export const exercisesApi = createApi({
 
   baseQuery: axiosBaseQuery(),
 
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     getExercises: builder.query<ExerciseData, ExercisesQuery>({
       query: ({ bodypart, equipment, muscles, keyword, limit, page }) => ({
         url: "/exercises",
@@ -45,7 +45,7 @@ export const exercisesApi = createApi({
     }),
 
     getExerciseById: builder.query<Exercise, string>({
-      query: (id) => ({
+      query: id => ({
         url: `/exercises/${id}`,
         method: "GET",
       }),

@@ -1,24 +1,31 @@
-import Exercises from "components/Exercises";
-import { FilterValues } from "helpers/filterValues";
+import Exercises from "components/ExercisesList";
+import { FilterKey } from "helpers/filterKey";
 import {
   FILTERS_DEFAULT_LIMIT,
   FILTERS_DEFAULT_PAGE,
 } from "helpers/queryConfig";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useGetFiltersQuery } from "../../redux/filters/filtersApi";
 import FilterList from "components/FilterList";
-// import { ROUTES } from "router";
+import { exerciseQueryVocabulary } from "config/exerciseQueryVocabulary";
 
 interface ICardSectionProps {
-  //   route: (typeof ROUTES)[keyof Omit<typeof ROUTES, "FAVORITES">];
-  filter: FilterValues;
+  filterKey: FilterKey;
 }
 
-const CardSection: FC<ICardSectionProps> = ({ filter }) => {
-  //   if (route === ROUTES.HOME) return <div>Filter cards</div>;
+const CardSection: FC<ICardSectionProps> = ({ filterKey }) => {
+  const [filterValue, setFilterValue] = useState<string | null>(null);
+
+  const onOpenExercises = (filterValue: string) => {
+    setFilterValue(filterValue);
+  };
+
+  useEffect(() => {
+    setFilterValue(null);
+  }, [filterKey]);
 
   const { data, isError, isFetching } = useGetFiltersQuery({
-    filter,
+    filterKey,
     page: FILTERS_DEFAULT_PAGE,
     limit: FILTERS_DEFAULT_LIMIT,
   });
@@ -27,17 +34,24 @@ const CardSection: FC<ICardSectionProps> = ({ filter }) => {
   if (isError) return <div>Error Component (CardSection)</div>;
   if (!data) return null;
 
-  console.log(data);
+  console.log("res", data.results);
 
   // return null
   return (
     <div>
-      <FilterList list={data.results} />
+      {filterValue ? (
+        <Exercises
+          filterKey={exerciseQueryVocabulary(filterKey)}
+          filterValue={filterValue}
+        />
+      ) : (
+        <FilterList
+          list={data.results}
+          onOpen={onOpenExercises}
+        />
+      )}
     </div>
   );
-  // if (1) return <div>Filter</div>;
-
-  // return <Exercises />;
 };
 
 export default CardSection;

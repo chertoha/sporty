@@ -14,21 +14,8 @@ import { theme } from "styles/theme";
 
 interface IFilterListProps {
   list: Filter[];
+  onOpen: (value: string) => void;
 }
-
-const Image = styled("img")(({ theme }) => ({
-  // width: 50,
-  // height: 50,
-
-  display: "block",
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-
-  [theme.breakpoints.up("md")]: {},
-
-  [theme.breakpoints.up("xl")]: {},
-}));
 
 // const List = styled("ul")(theme => ({
 
@@ -37,8 +24,20 @@ const Image = styled("img")(({ theme }) => ({
 //   [theme.breakpoints.up("xl")]: {},
 // }));
 
-const FilterList: FC<IFilterListProps> = ({ list }) => {
-  console.log(list);
+const FilterList: FC<IFilterListProps> = ({ list, onOpen }) => {
+  const Image = styled("img")(({ theme }) => ({
+    // width: 50,
+    // height: 50,
+
+    display: "block",
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+
+    [theme.breakpoints.up("md")]: {},
+
+    [theme.breakpoints.up("xl")]: {},
+  }));
 
   return (
     <Box>
@@ -56,6 +55,9 @@ const FilterList: FC<IFilterListProps> = ({ list }) => {
             md={4}
           >
             <ButtonBase
+              onClick={() => {
+                onOpen(name);
+              }}
               sx={{
                 position: "relative",
                 borderRadius: 6,
