@@ -12,10 +12,13 @@ const Tag: FC<ITagProps> = () => {
       variant="outlined"
       sx={{
         height: "auto",
-        px: 8,
-        fontSize: "16px",
+        fontSize: {
+          xs: "14px",
+          md: "16px",
+        },
         lineHeight: 1.5,
         py: "3px",
+        px: { xs: 6, md: 8 },
       }}
     />
   );
