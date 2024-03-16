@@ -2,5 +2,8 @@
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///d%3A/WebDev/pet-projects/sporty/.github/workflows/deploy.yml"
+  }
   // "testing.openTesting": "openExplorerOnTestStart"
 }
