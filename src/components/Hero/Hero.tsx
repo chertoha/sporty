@@ -1,5 +1,4 @@
 import { Box, Container } from "@mui/material";
-import Tag from "components/UIKit/Tag";
 import React, { FC } from "react";
 
 interface IHeroProps {
@@ -14,7 +13,6 @@ const Hero: FC<IHeroProps> = () => {
     >
       <Container sx={{ outline: "1px solid blue", height: "100px" }}>
         Hero
-        <Tag />
       </Container>
     </Box>
   );

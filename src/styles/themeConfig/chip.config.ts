@@ -7,7 +7,7 @@ const chipConfig: Components<Omit<Theme, "components">> | undefined = {
         ...(ownerState.variant === "outlined" && {
           borderColor: theme.palette.bg.dark,
           color: theme.palette.text.primary,
-          "&.MuiChip-outlined span.MuiChip-label": { px: 0 },
+          "& .MuiChip-label": { paddingLeft: 0, paddingRight: 0 },
         }),
       }),
     },

@@ -10,7 +10,13 @@ const Tag: FC<ITagProps> = () => {
     <Chip
       label="#Sport"
       variant="outlined"
-      //   sx={{ px: 8 }}
+      sx={{
+        height: "auto",
+        px: 8,
+        fontSize: "16px",
+        lineHeight: 1.5,
+        py: "3px",
+      }}
     />
   );
 };
