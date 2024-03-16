@@ -18,7 +18,7 @@ jobs:
         run: npm ci
 
       - name: Linting
-        run: npm run lint
+        run: npm run lint --strict
 
       - name: Install and Build
         # env:
