@@ -21,7 +21,8 @@ declare module "@mui/material/styles" {
 
   interface PaletteOptions {
     // neutral?: PaletteColorOptions;
-    bg?: PaletteOptions["primary"];
+    // bg?: PaletteOptions["primary"];
+    bg?: PaletteColorOptions["primary"];
   }
 
   interface PaletteColor {
