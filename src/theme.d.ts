@@ -1,4 +1,4 @@
-// import { PaletteColorOptions } from "@mui/material";
+import { PaletteColorOptions } from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface Theme {
@@ -21,7 +21,8 @@ declare module "@mui/material/styles" {
 
   interface PaletteOptions {
     // neutral?: PaletteColorOptions;
-    bg?: PaletteOptions["primary"];
+    // bg?: PaletteOptions["primary"];
+    bg?: PaletteColorOptions["primary"];
   }
 
   interface PaletteColor {
