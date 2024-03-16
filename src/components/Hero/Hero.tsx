@@ -15,15 +15,29 @@ const Hero: FC<IHeroProps> = () => {
         <Box
           sx={{
             display: "grid",
-            gridTemplateAreas: `"head tags" "image image"`,
+            gridTemplateColumns: "1fr auto",
+            gridTemplateAreas: {
+              xs: `"head" "image" "tags"`,
+              xl: `"head tags" "image image"`,
+            },
           }}
         >
-          <Box
-            sx={{ gridArea: "head", flexGrow: "2", outline: "1px solid gray" }}
-          >
+          <Box sx={{ gridArea: "head", outline: "1px solid gray" }}>
             Heading
           </Box>
-          <Box sx={{ gridArea: "tags", outline: "1px solid red" }}>Tags</Box>
+          <Box
+            sx={{
+              gridArea: "tags",
+              outline: "1px solid red",
+              justifySelf: {
+                xs: "center",
+                md: "flex-end",
+                xl: "inherit",
+              },
+            }}
+          >
+            Tags
+          </Box>
           <Box sx={{ gridArea: "image", outline: "1px solid green" }}>
             Image
           </Box>
