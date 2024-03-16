@@ -18,11 +18,9 @@ jobs:
         run: npm ci
 
       - name: Linting
-        run: npm run lint --max-warnings=0
+        run: npm run lint || exit 1
 
       - name: Install and Build
-        # env:
-        #   REACT_APP_API_BASE_URL: ${{ secrets.REACT_APP_API_BASE_URL}}
         run: npm run build
 
       - name: Testing
