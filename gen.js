@@ -26,7 +26,7 @@ function invokeAction({ folder, component: components }) {
 
   const componentList = components.split("/");
 
-  componentList.forEach((component) => {
+  componentList.forEach(component => {
     if (!component) {
       console.warn("Script must specify component");
       process.exit(1);
@@ -38,7 +38,7 @@ function invokeAction({ folder, component: components }) {
     const indexFilePath = path.join(folderPath, "index.ts");
 
     if (!fs.existsSync(folderPath)) {
-      fs.mkdir(folderPath, (err) => {
+      fs.mkdir(folderPath, err => {
         if (err) {
           return console.error(err);
         }
@@ -59,7 +59,7 @@ console.log("---------CLI--------");
 
 function componentCode(component) {
   return `
-import React, { FC } from "react";\n
+import { FC } from "react";\n
 
 interface I${component}Props {
     //...

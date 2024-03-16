@@ -1,4 +1,5 @@
 import { Box, Container } from "@mui/material";
+import Tag from "components/UIKit/Tag";
 import React, { FC } from "react";
 
 interface IHeroProps {
@@ -7,8 +8,14 @@ interface IHeroProps {
 
 const Hero: FC<IHeroProps> = () => {
   return (
-    <Box component="section">
-      <Container sx={{ outline: "1px solid blue" }}>Hero</Container>
+    <Box
+      component="section"
+      sx={{ py: 40 }}
+    >
+      <Container sx={{ outline: "1px solid blue", height: "100px" }}>
+        Hero
+        <Tag />
+      </Container>
     </Box>
   );
 };
