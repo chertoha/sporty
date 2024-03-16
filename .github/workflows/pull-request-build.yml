@@ -1,9 +1,11 @@
-name: Pull-request CI
+name: Pull-request CI Build
 run-name: ${{ github.actor }} run these jobs
-on: [pull_request]
+on:
+  pull_request:
+    branches: [main]
 
 jobs:
-  build-che:
+  install-lint-build-test:
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
