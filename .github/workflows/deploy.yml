@@ -29,7 +29,7 @@ run-name: ${{ github.actor }} run these jobs
 on: [pull_request]
 
 jobs:
-  build:
+  build-che:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
