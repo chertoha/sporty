@@ -17,7 +17,7 @@ describe("Trim text function testing", () => {
   });
 
   test("Return undefined on str=null || undefined", () => {
-    const str = "asdsdfsdfsfsdf";
+    const str = null;
     const trimLength = 10;
 
     expect(trimText(str, trimLength)).toEqual(undefined);
