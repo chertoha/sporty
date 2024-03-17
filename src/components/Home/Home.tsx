@@ -3,7 +3,7 @@ import Hero from "components/Hero";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { Outlet } from "react-router";
 import { NavLink } from "react-router-dom";
-import { ROUTES } from "router";
+// import { ROUTES } from "router";
 
 interface IHomeProps {
   //...
