@@ -7,6 +7,7 @@ import bg_tab_1x from "assets/images/hero/hero-tab@1x.jpg";
 import bg_tab_2x from "assets/images/hero/hero-tab@2x.jpg";
 import bg_desk_1x from "assets/images/hero/hero-desktop@1x.jpg";
 import bg_desk_2x from "assets/images/hero/hero-desktop@2x.jpg";
+import heroThumbnailImage from "assets/images/hero/hero-thumbnail.jpg";
 import Tag from "components/UIKit/Tag";
 
 interface IHeroProps {
@@ -55,10 +56,18 @@ const Banner = styled(Box)(({ theme }) => ({
   },
 }));
 
+const Thumbnail = styled("img")(({ theme }) => ({
+  display: "none",
+
+  [theme.breakpoints.up("xl")]: {
+    display: "block",
+    borderRadius: 10,
+    marginLeft: "auto",
+  },
+}));
+
 const TagWrapper = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
-  // justifyContent: "space-between",
-  // columnGap: 8,
 
   [theme.breakpoints.up("xs")]: {
     flexWrap: "wrap",
@@ -76,16 +85,17 @@ const TagWrapper = styled(Stack)(({ theme }) => ({
     justifyContent: "flex-end",
     columnGap: 8,
   },
-  [theme.breakpoints.up("xl")]: {},
+  [theme.breakpoints.up("xl")]: {
+    marginTop: 32,
+    justifyContent: "stretch",
+    flexWrap: "wrap",
+  },
 }));
 
 const Hero: FC<IHeroProps> = () => {
   return (
-    <Box
-      component="section"
-      // sx={{ pt: { xs: 40, md: 50 } }}
-    >
-      <Container sx={{ outline: "1px solid blue" }}>
+    <Box component="section">
+      <Container>
         <Box
           sx={{
             display: "grid",
@@ -96,7 +106,11 @@ const Hero: FC<IHeroProps> = () => {
             },
           }}
         >
-          <Box sx={{ gridArea: "head", outline: "1px solid gray" }}>
+          <Box
+            sx={{
+              gridArea: "head",
+            }}
+          >
             <Typography
               variant="h1"
               sx={{ letterSpacing: "-0.02em", maxWidth: "639px" }}
@@ -122,13 +136,8 @@ const Hero: FC<IHeroProps> = () => {
           <Box
             sx={{
               gridArea: "tags",
-              // outline: "1px solid red",
-              width: "100%",
-              justifySelf: {
-                // xs: "center",
-                // md: "flex-end",
-                // xl: "inherit",
-              },
+              alignSelf: "flex-end",
+              width: { xs: "100%", xl: "200px" },
               mt: {
                 xs: 10,
                 md: 8,
@@ -136,6 +145,10 @@ const Hero: FC<IHeroProps> = () => {
               },
             }}
           >
+            <Thumbnail
+              src={heroThumbnailImage}
+              alt="young-women-doing-fitness-outdoors-together"
+            />
             <TagWrapper>
               <Tag label="#Sport" />
               <Tag label="#Healthy" />
@@ -147,7 +160,6 @@ const Hero: FC<IHeroProps> = () => {
           <Banner
             sx={{
               gridArea: "image",
-              // outline: "1px solid green",
               mt: { xs: 10, md: 16 },
             }}
           ></Banner>
