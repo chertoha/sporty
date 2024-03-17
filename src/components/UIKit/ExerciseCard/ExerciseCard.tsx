@@ -16,6 +16,7 @@ import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 import { Exercise } from "types/dataTypes";
 import { ViewportSize } from "hooks/useWindowSize";
 import { useModalWindow } from "hooks/useModalWindow";
+import ExercisePopup from "components/ExercisePopup";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
@@ -206,7 +207,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
         isOpen={isOpen}
         close={close}
       >
-        <Box> Modal window</Box>
+        <ExercisePopup />
       </ModalWindow>
     </Box>
   );
