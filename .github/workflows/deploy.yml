@@ -11,17 +11,10 @@ jobs:
       - name: Get repository code
         uses: actions/checkout@v2.3.1
 
-      - name: Set environment varialbles
-        env:
-          REACT_APP_API_BASE_URL: ${{secrets.REACT_APP_API_BASE_URL}}
-        run: echo "Variables successfully set"
-
-      # - name: Install and Build 🔧
+      # - name: Set environment varialbles
       #   env:
-      #     REACT_APP_API_BASE_URL: ${{ secrets.REACT_APP_API_BASE_URL}}
-      #   run: |
-      #     npm ci
-      #     npm run build
+      #     REACT_APP_API_BASE_URL: ${{secrets.REACT_APP_API_BASE_URL}}
+      #   run: echo "Variables successfully set"
 
       - name: Install depencies
         run: npm ci
