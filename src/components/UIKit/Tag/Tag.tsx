@@ -2,13 +2,13 @@ import Chip from "@mui/material/Chip";
 import { FC } from "react";
 
 interface ITagProps {
-  //...
+  label: string;
 }
 
-const Tag: FC<ITagProps> = () => {
+const Tag: FC<ITagProps> = ({ label }) => {
   return (
     <Chip
-      label="#Sport"
+      label={label}
       variant="outlined"
       sx={{
         height: "auto",

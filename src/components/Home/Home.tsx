@@ -20,7 +20,10 @@ const Home: FC<IHomeProps> = () => {
     <>
       <Hero />
 
-      <Box component="section">
+      <Box
+        component="section"
+        sx={{ pt: { xs: 20, md: 32 } }}
+      >
         <Container sx={{ outline: "1px solid grey" }}>
           <Stack
             direction="row"
@@ -31,7 +34,10 @@ const Home: FC<IHomeProps> = () => {
               <Typography variant="h2">Exercises</Typography>
             </Box>
 
-            <Stack direction="row" spacing={10}>
+            <Stack
+              direction="row"
+              spacing={10}
+            >
               <StyledNavLink to={ROUTES.MUSCLES}>Muscles</StyledNavLink>
               <StyledNavLink to={ROUTES.BODY_PARTS}>Body parts</StyledNavLink>
               <StyledNavLink to={ROUTES.EQUIPMENT}>Equipment</StyledNavLink>

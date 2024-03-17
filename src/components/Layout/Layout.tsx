@@ -9,7 +9,10 @@ const Layout = () => {
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
 
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, py: { xs: 40, md: 50 } }}
+      >
         <Suspense>
           <Outlet />
         </Suspense>
