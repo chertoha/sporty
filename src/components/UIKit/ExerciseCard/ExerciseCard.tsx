@@ -1,3 +1,5 @@
+import TrimmedText from "../TrimmedText";
+import ModalWindow from "components/ModalWindow";
 import {
   Box,
   Button,
@@ -13,7 +15,7 @@ import { ReactComponent as RunnerIcon } from "assets/images/icons/runner.svg";
 import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 import { Exercise } from "types/dataTypes";
 import { ViewportSize } from "hooks/useWindowSize";
-import TrimmedText from "../TrimmedText";
+import { useModalWindow } from "hooks/useModalWindow";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
@@ -28,6 +30,8 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
   viewport,
   exercise: { _id, bodyPart, burnedCalories, name, rating, time, target },
 }) => {
+  const { isOpen, close, open } = useModalWindow();
+
   return (
     <Box
       sx={{
@@ -110,6 +114,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
             px: [6],
           }}
           endIcon={<ArrowIcon />}
+          onClick={open}
         >
           Start
         </Button>
@@ -196,6 +201,13 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
           />
         </Typography>
       </Stack>
+
+      <ModalWindow
+        isOpen={isOpen}
+        close={close}
+      >
+        <Box> Modal window</Box>
+      </ModalWindow>
     </Box>
   );
 };

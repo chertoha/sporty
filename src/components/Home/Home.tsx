@@ -10,8 +10,6 @@ interface IHomeProps {
 }
 
 const StyledNavLink = styled(NavLink)(({ theme }) => ({
-  // ...theme.components?.MuiLink,
-  // color: "red",
   "&.active": { color: "red" },
 }));
 
