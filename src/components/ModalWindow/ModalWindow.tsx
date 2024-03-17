@@ -63,7 +63,7 @@ const ModalWindow: FC<IModalWindowProps> = ({ children, isOpen, close }) => {
       onClose={close}
     >
       <ModalContainer>
-        <CloseButton>
+        <CloseButton onClick={close}>
           <CloseIcon />
         </CloseButton>
         {children}

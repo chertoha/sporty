@@ -16,6 +16,7 @@ import { Exercise } from "types/dataTypes";
 import { ViewportSize } from "hooks/useWindowSize";
 import TrimmedText from "../TrimmedText";
 import ModalWindow from "components/ModalWindow";
+import { useModalWindow } from "hooks/useModalWindow";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
@@ -30,10 +31,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
   viewport,
   exercise: { _id, bodyPart, burnedCalories, name, rating, time, target },
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  const { isOpen, close, open } = useModalWindow();
 
   return (
     <Box
