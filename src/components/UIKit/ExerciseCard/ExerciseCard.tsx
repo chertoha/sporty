@@ -1,21 +1,20 @@
+import TrimmedText from "../TrimmedText";
+import ModalWindow from "components/ModalWindow";
 import {
   Box,
   Button,
   Chip,
   IconButton,
-  Modal,
   Stack,
   Typography,
 } from "@mui/material";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { ReactComponent as StarIcon } from "assets/images/icons/star.svg";
 import { ReactComponent as ArrowIcon } from "assets/images/icons/arrow.svg";
 import { ReactComponent as RunnerIcon } from "assets/images/icons/runner.svg";
 import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 import { Exercise } from "types/dataTypes";
 import { ViewportSize } from "hooks/useWindowSize";
-import TrimmedText from "../TrimmedText";
-import ModalWindow from "components/ModalWindow";
 import { useModalWindow } from "hooks/useModalWindow";
 
 interface IExerciseCardProps {

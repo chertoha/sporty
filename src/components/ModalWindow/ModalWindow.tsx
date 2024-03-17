@@ -1,5 +1,5 @@
-import { IconButton, styled } from "@mui/material";
 import Modal from "@mui/material/Modal";
+import { IconButton, styled } from "@mui/material";
 import { FC, ReactElement } from "react";
 import { ReactComponent as CloseIcon } from "assets/images/icons/close.svg";
 
