@@ -3,10 +3,11 @@ import {
   Button,
   Chip,
   IconButton,
+  Modal,
   Stack,
   Typography,
 } from "@mui/material";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { ReactComponent as StarIcon } from "assets/images/icons/star.svg";
 import { ReactComponent as ArrowIcon } from "assets/images/icons/arrow.svg";
 import { ReactComponent as RunnerIcon } from "assets/images/icons/runner.svg";
@@ -14,6 +15,7 @@ import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 import { Exercise } from "types/dataTypes";
 import { ViewportSize } from "hooks/useWindowSize";
 import TrimmedText from "../TrimmedText";
+import ModalWindow from "components/ModalWindow";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
@@ -28,6 +30,11 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
   viewport,
   exercise: { _id, bodyPart, burnedCalories, name, rating, time, target },
 }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const open = () => setIsOpen(true);
+  const close = () => setIsOpen(false);
+
   return (
     <Box
       sx={{
@@ -110,6 +117,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
             px: [6],
           }}
           endIcon={<ArrowIcon />}
+          onClick={open}
         >
           Start
         </Button>
@@ -196,6 +204,13 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
           />
         </Typography>
       </Stack>
+
+      <ModalWindow
+        isOpen={isOpen}
+        close={close}
+      >
+        <Box> Modal window</Box>
+      </ModalWindow>
     </Box>
   );
 };

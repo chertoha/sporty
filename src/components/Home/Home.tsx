@@ -34,14 +34,14 @@ const Home: FC<IHomeProps> = () => {
               <Typography variant="h2">Exercises</Typography>
             </Box>
 
-            <Stack
+            {/* <Stack
               direction="row"
               spacing={10}
             >
               <StyledNavLink to={ROUTES.MUSCLES}>Muscles</StyledNavLink>
               <StyledNavLink to={ROUTES.BODY_PARTS}>Body parts</StyledNavLink>
               <StyledNavLink to={ROUTES.EQUIPMENT}>Equipment</StyledNavLink>
-            </Stack>
+            </Stack> */}
           </Stack>
 
           <Stack
