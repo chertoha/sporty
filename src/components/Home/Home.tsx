@@ -3,15 +3,13 @@ import Hero from "components/Hero";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { Outlet } from "react-router";
 import { NavLink } from "react-router-dom";
-// import { ROUTES } from "router";
+import { ROUTES } from "router";
 
 interface IHomeProps {
   //...
 }
 
 const StyledNavLink = styled(NavLink)(({ theme }) => ({
-  // ...theme.components?.MuiLink,
-  // color: "red",
   "&.active": { color: "red" },
 }));
 
@@ -34,14 +32,14 @@ const Home: FC<IHomeProps> = () => {
               <Typography variant="h2">Exercises</Typography>
             </Box>
 
-            {/* <Stack
+            <Stack
               direction="row"
               spacing={10}
             >
               <StyledNavLink to={ROUTES.MUSCLES}>Muscles</StyledNavLink>
               <StyledNavLink to={ROUTES.BODY_PARTS}>Body parts</StyledNavLink>
               <StyledNavLink to={ROUTES.EQUIPMENT}>Equipment</StyledNavLink>
-            </Stack> */}
+            </Stack>
           </Stack>
 
           <Stack
