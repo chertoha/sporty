@@ -13,15 +13,15 @@ const ModalContainer = styled("div")(({ theme }) => ({
   width: "90%",
   minHeight: 100,
   position: "absolute" as "absolute",
-  top: "50%",
+  top: "15%",
   left: "50%",
-  transform: "translate(-50%,-50%)",
+  transform: "translateX(-50%)",
 
   backgroundColor: theme.palette.bg?.dark,
   borderRadius: 20,
 
   [theme.breakpoints.up("sm")]: { width: "335px" },
-  [theme.breakpoints.up("md")]: { width: "704px", padding: "40px 40px" },
+  [theme.breakpoints.up("md")]: { width: "704px" },
   [theme.breakpoints.up("xl")]: { width: "708px" },
 }));
 
@@ -61,6 +61,9 @@ const ModalWindow: FC<IModalWindowProps> = ({ children, isOpen, close }) => {
     <Modal
       open={isOpen}
       onClose={close}
+      sx={{
+        overflow: "auto",
+      }}
     >
       <ModalContainer>
         <CloseButton onClick={close}>
