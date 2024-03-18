@@ -10,11 +10,23 @@ const buttonConfig: Components<Omit<Theme, "components">> | undefined = {
     styleOverrides: {
       root: ({ ownerState, theme }: { ownerState: any; theme: any }) => ({
         ...{
+          padding: "12px 24px",
+
           textTransform: "none",
+          fontSize: "14px",
+          lineHeight: 1.3,
+          fontWeight: 400,
+
           borderColor: theme.palette.bg.main,
           borderRadius: 30,
           color: theme.palette.text.secondary,
           backgroundColor: "transparent",
+
+          [theme.breakpoints.up("md")]: {
+            fontSize: "16px",
+            lineHeight: 1.5,
+          },
+
           "&:hover": {
             backgroundColor: theme.palette.bg.main,
             borderColor: theme.palette.bg.main,
@@ -26,7 +38,8 @@ const buttonConfig: Components<Omit<Theme, "components">> | undefined = {
           borderColor: theme.palette.bg.main,
           backgroundColor: theme.palette.bg.main,
           color: theme.palette.text.primary,
-          border: "1px solid",
+          borderWidth: 1,
+          borderStyle: "solid",
 
           "&:hover": {
             backgroundColor: "transparent",

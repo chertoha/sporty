@@ -110,6 +110,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
 
         <Button
           sx={{
+            py: 3,
             fontSize: 16,
             fontWeight: 400,
             px: [6],

@@ -1,12 +1,12 @@
 import Rating from "@mui/material/Rating";
 import StarRateRoundedIcon from "@mui/icons-material/StarRateRounded";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Box, alpha, styled } from "@mui/material";
 
-const StyledRating = styled(Rating)<{ iconSize: number }>(
-  ({ theme, iconSize }) => ({
+const StyledRating = styled(Rating)<{ iconsize: number }>(
+  ({ theme, iconsize }) => ({
     columnGap: 2,
-    fontSize: `${iconSize}px`,
+    fontSize: `${iconsize}px`,
     lineHeight: 1,
 
     "& .MuiRating-iconEmpty": {
@@ -25,23 +25,21 @@ const StyledRating = styled(Rating)<{ iconSize: number }>(
 interface IRateBarProps {
   size?: number;
   readOnly?: boolean;
-  initialValue?: number;
+  setValue?: (value: number | null) => void;
+  value: number | null;
 }
 
 const RateBar: FC<IRateBarProps> = ({
   size = 18,
   readOnly = true,
-  initialValue = 0,
+  setValue,
+  value,
 }) => {
-  const [value, setValue] = useState<number | null>(() =>
-    initialValue < 0 || initialValue > 5 ? 0 : initialValue
-  );
-
   return (
     <Box sx={{ display: "flex" }}>
       <StyledRating
         readOnly={readOnly}
-        iconSize={size}
+        iconsize={size}
         color="white"
         precision={0.1}
         icon={<StarRateRoundedIcon fontSize="inherit" />}
@@ -49,7 +47,7 @@ const RateBar: FC<IRateBarProps> = ({
         name="simple-controlled"
         value={value}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          setValue && setValue(newValue);
         }}
       />
     </Box>
