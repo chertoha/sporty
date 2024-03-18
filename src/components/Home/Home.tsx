@@ -1,5 +1,5 @@
-import React, { FC, Suspense } from "react";
 import Hero from "components/Hero";
+import { FC, Suspense } from "react";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { Outlet } from "react-router";
 import { NavLink } from "react-router-dom";
