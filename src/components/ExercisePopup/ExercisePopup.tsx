@@ -1,6 +1,7 @@
 import { Box, Typography, alpha, styled } from "@mui/material";
 import { FC } from "react";
 import tempImage from "assets/images/modal-temp.jpg";
+import RateBar from "components/UIKit/RateBar";
 
 interface IExercisePopupProps {
   //...
@@ -37,6 +38,7 @@ const Image = styled("img")(({ theme }) => ({
 }));
 
 const Heaading = styled("h2")(({ theme }) => ({
+  marginBottom: 0,
   marginTop: 10,
   fontSize: "20px",
   fontWeight: 500,
@@ -94,7 +96,12 @@ const ExercisePopup: FC<IExercisePopupProps> = () => {
         <Box>
           <Heaading>Air bake</Heaading>
 
-          <Box sx={{ mt: { xs: 5, md: 4 } }}>Stars</Box>
+          <Box sx={{ mt: { xs: 5, md: 4 } }}>
+            <RateBar
+              initialValue={3.3}
+              // readOnly={false}
+            />
+          </Box>
 
           <List>
             <li>
