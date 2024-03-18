@@ -1,7 +1,9 @@
-import { Box, Typography, alpha, styled } from "@mui/material";
-import { FC } from "react";
+import { Box, Button, Typography, alpha, styled } from "@mui/material";
+import { FC, useState } from "react";
 import tempImage from "assets/images/modal-temp.jpg";
 import RateBar from "components/UIKit/RateBar";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 
 interface IExercisePopupProps {
   //...
@@ -39,7 +41,7 @@ const Image = styled("img")(({ theme }) => ({
 
 const Heaading = styled("h2")(({ theme }) => ({
   marginBottom: 0,
-  marginTop: 10,
+  marginTop: 20,
   fontSize: "20px",
   fontWeight: 500,
   lineHeight: 1,
@@ -85,7 +87,24 @@ const Text = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("md")]: { marginTop: 16 },
 }));
 
+const Toolbar = styled(Typography)(({ theme }) => ({
+  marginTop: 40,
+
+  [theme.breakpoints.up("md")]: {
+    marginTop: 64,
+    display: "flex",
+    justifyContent: "flex-end",
+    columnGap: 7,
+  },
+}));
+
 const ExercisePopup: FC<IExercisePopupProps> = () => {
+  const [rateValue, setRateValue] = useState<number | null>(0);
+
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+
+  const toggleFavorite = () => setIsFavorite(prevState => !prevState);
+
   return (
     <Wrapper>
       <Meta>
@@ -96,9 +115,18 @@ const ExercisePopup: FC<IExercisePopupProps> = () => {
         <Box>
           <Heaading>Air bake</Heaading>
 
-          <Box sx={{ mt: { xs: 5, md: 4 } }}>
+          <Box
+            sx={{ mt: { xs: 5, md: 4 }, display: "flex", alignItems: "center" }}
+          >
+            <Typography
+              variant="body2"
+              sx={{ mr: 1 }}
+            >
+              {rateValue?.toFixed(1)}
+            </Typography>
             <RateBar
-              initialValue={3.3}
+              value={rateValue}
+              setValue={setRateValue}
               // readOnly={false}
             />
           </Box>
@@ -134,9 +162,23 @@ const ExercisePopup: FC<IExercisePopupProps> = () => {
           </Text>
         </Box>
       </Meta>
-      <Box sx={{ outline: "1px solid red", mt: { xs: 20, md: 32 } }}>
-        Buttons
-      </Box>
+
+      <Toolbar>
+        <Button
+          sx={{ width: { xs: "100%", md: "auto" } }}
+          onClick={toggleFavorite}
+          variant="contained"
+          endIcon={isFavorite ? <TrashIcon /> : <FavoriteBorderOutlinedIcon />}
+        >
+          {isFavorite ? "Remove from favorites" : "Add to favorites"}
+        </Button>
+        <Button
+          sx={{ mt: { xs: 5, md: 0 }, width: { xs: "100%", md: "auto" } }}
+          variant="outlined"
+        >
+          Give a rating
+        </Button>
+      </Toolbar>
     </Wrapper>
   );
 };
