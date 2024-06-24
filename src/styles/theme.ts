@@ -21,7 +21,6 @@ export const theme = createTheme({
     },
   },
 
-  //Breakpoints
   breakpoints: {
     values: {
       xs: 0,
@@ -32,23 +31,19 @@ export const theme = createTheme({
     },
   },
 
-  //Spacing
   spacing: 2,
 
-  //Palette
   palette: {
     bg: {
       main: "#F4F4F4",
       dark: "#242424",
       light: "#FFFFFF",
       contrastText: "#242424",
-      // darker: "#555555",
     },
 
     text: { primary: "#242424", secondary: "#F4F4F4" },
   },
 
-  //Components
   components: {
     ...textFieldConfig,
     ...buttonConfig,
@@ -57,11 +52,3 @@ export const theme = createTheme({
     ...containerConfig,
   },
 });
-
-/*
-Dark colors
-#242424 black
-
-
-
-*/
