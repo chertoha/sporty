@@ -51,7 +51,6 @@ const buttonConfig: Components<Omit<Theme, "components">> | undefined = {
         ...(ownerState.variant === "text" && {
           color: theme.palette.text.primary,
           transitionProperty: "background-color, color",
-          // transitionDuration: "300ms",
           transitionTimingFunction: "ease-in-out",
 
           "&:hover": {
