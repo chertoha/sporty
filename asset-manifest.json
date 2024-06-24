@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/sporty/static/js/main.c0d7a201.js",
-    "static/js/965.e3bdf5e2.chunk.js": "/sporty/static/js/965.e3bdf5e2.chunk.js",
+    "main.js": "/sporty/static/js/main.0be60963.js",
+    "static/js/965.6a484eca.chunk.js": "/sporty/static/js/965.6a484eca.chunk.js",
     "static/js/532.9b8f09ff.chunk.js": "/sporty/static/js/532.9b8f09ff.chunk.js",
     "static/js/787.2023ac86.chunk.js": "/sporty/static/js/787.2023ac86.chunk.js",
     "static/media/hero-desktop@2x.jpg": "/sporty/static/media/hero-desktop@2x.587eac5ce54846e49d24.jpg",
@@ -13,18 +13,22 @@
     "static/media/hero-thumbnail.jpg": "/sporty/static/media/hero-thumbnail.2d6bcebc963d6ee5ab17.jpg",
     "static/media/hero-mob@1x.jpg": "/sporty/static/media/hero-mob@1x.028da91adf97743374cc.jpg",
     "static/media/runner.svg": "/sporty/static/media/runner.2e222a79ae07974d70b2d6912ae7668d.svg",
+    "static/media/instagram.svg": "/sporty/static/media/instagram.258c254825bc9fb10e78c12e88434179.svg",
     "static/media/sun.svg": "/sporty/static/media/sun.e308112694f4464bc3de8a1261e6ef15.svg",
+    "static/media/logo.svg": "/sporty/static/media/logo.bc4b8a474e1d8e1be951aaeca5a43810.svg",
     "index.html": "/sporty/index.html",
+    "static/media/youtube.svg": "/sporty/static/media/youtube.d12b499bb8449bb75ecf7b0c534f0f10.svg",
     "static/media/trash.svg": "/sporty/static/media/trash.adecc67262811c7723d7af9d76797447.svg",
     "static/media/star.svg": "/sporty/static/media/star.42bd112b40453185bc0407491e820e9c.svg",
+    "static/media/facebook.svg": "/sporty/static/media/facebook.b35034b64829d8294bc10ff62783d27d.svg",
     "static/media/arrow.svg": "/sporty/static/media/arrow.e524a8ed02f2cca5e0e77ca8521cd2a5.svg",
     "static/media/close.svg": "/sporty/static/media/close.54a3c11bec9647bc391c686b968aef5c.svg",
-    "main.c0d7a201.js.map": "/sporty/static/js/main.c0d7a201.js.map",
-    "965.e3bdf5e2.chunk.js.map": "/sporty/static/js/965.e3bdf5e2.chunk.js.map",
+    "main.0be60963.js.map": "/sporty/static/js/main.0be60963.js.map",
+    "965.6a484eca.chunk.js.map": "/sporty/static/js/965.6a484eca.chunk.js.map",
     "532.9b8f09ff.chunk.js.map": "/sporty/static/js/532.9b8f09ff.chunk.js.map",
     "787.2023ac86.chunk.js.map": "/sporty/static/js/787.2023ac86.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.c0d7a201.js"
+    "static/js/main.0be60963.js"
   ]
 }
