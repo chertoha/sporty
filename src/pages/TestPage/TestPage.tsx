@@ -21,13 +21,19 @@ const TestPage: FC<ITestPageProps> = () => {
 
       <Typography variant="cardtitle">cardtitle</Typography>
 
-      <Typography variant="body1" component="h1">
+      <Typography
+        variant="body1"
+        component="h1"
+      >
         Typography
       </Typography>
 
       <Box bgcolor="bg.dark">
         Home component
-        <Button variant="contained" endIcon={<FavoriteBorderOutlinedIcon />}>
+        <Button
+          variant="contained"
+          endIcon={<FavoriteBorderOutlinedIcon />}
+        >
           Add to favorites
         </Button>
         <Button variant="outlined">Give a rating</Button>
@@ -50,11 +56,17 @@ const TestPage: FC<ITestPageProps> = () => {
         </FormControl>
       </Box>
 
-      <Button variant="text" endIcon={<ArrowForwardIcon />}>
+      <Button
+        variant="text"
+        endIcon={<ArrowForwardIcon />}
+      >
         Start
       </Button>
 
-      <Chip label="#Sport" variant="outlined" />
+      <Chip
+        label="#Sport"
+        variant="outlined"
+      />
     </>
   );
 };
