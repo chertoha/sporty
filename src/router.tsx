@@ -1,12 +1,12 @@
 import CardSection from "components/CardSection";
 import Layout from "components/Layout";
 import TestPage from "pages/TestPage";
+
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
-// const ExercisePage = lazy(() => import("./pages/ExercisePage"));
 
 export const ROUTES = {
   HOME: "/",

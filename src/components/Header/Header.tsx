@@ -1,12 +1,7 @@
 import PageSwitcher from "components/PageSwitcher";
 import { Container } from "@mui/material";
-import { FC } from "react";
 
-interface IHeaderProps {
-  //...
-}
-
-const Header: FC<IHeaderProps> = () => {
+const Header = () => {
   return (
     <header>
       <Container sx={{ outline: "1px solid tomato" }}>

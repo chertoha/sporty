@@ -10,14 +10,6 @@ interface ITrimmedTextProps {
 }
 
 const TrimmedText: FC<ITrimmedTextProps> = ({ text, textLength, viewport }) => {
-  //   const getLength = (
-  //     viewport: ViewportSize,
-  //     length: number | [number?, number?, number?]
-  //   ): number => {
-  //     const { isMobile, isTablet, isDesktop } = viewport;
-  //     const arr = [isMobile, isTablet, isDesktop];
-  //   };
-
   if (typeof textLength === "number")
     return <Box component="span">{trimText(text, textLength)}</Box>;
 

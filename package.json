@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "set PORT=8000 && react-scripts start",
-    "lint": "eslint src/** --no-error-on-unmatched-pattern --max-warnings=0",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx} --no-error-on-unmatched-pattern --max-warnings=0",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "gen": "node gen.js -f ./src/components -c"

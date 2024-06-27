@@ -10,8 +10,7 @@ const api = axios.create({
 });
 
 const axiosBaseQuery =
-  (): // { baseUrl }: { baseUrl: string } = { baseUrl: "" }
-  BaseQueryFn<
+  (): BaseQueryFn<
     {
       url: string;
       method: AxiosRequestConfig["method"];

@@ -1,26 +1,8 @@
-import Rating from "@mui/material/Rating";
 import StarRateRoundedIcon from "@mui/icons-material/StarRateRounded";
+
 import { FC } from "react";
-import { Box, alpha, styled } from "@mui/material";
-
-const StyledRating = styled(Rating)<{ iconsize: number }>(
-  ({ theme, iconsize }) => ({
-    columnGap: 2,
-    fontSize: `${iconsize}px`,
-    lineHeight: 1,
-
-    "& .MuiRating-iconEmpty": {
-      color: alpha(theme.palette.text.secondary, 0.2),
-    },
-
-    "& .MuiRating-iconFilled": {
-      color: "#EEA10C",
-    },
-    "& .MuiRating-iconHover": {
-      color: "#EEA10C",
-    },
-  })
-);
+import { Box } from "@mui/material";
+import { StyledRating } from "./RateBar.styled";
 
 interface IRateBarProps {
   size?: number;
