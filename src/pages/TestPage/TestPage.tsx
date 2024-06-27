@@ -6,15 +6,10 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { FC } from "react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-interface ITestPageProps {
-  //...
-}
-
-const TestPage: FC<ITestPageProps> = () => {
+const TestPage = () => {
   return (
     <>
       <Typography variant="subtitle2">subtitle2</Typography>

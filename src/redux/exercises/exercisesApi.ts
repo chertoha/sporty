@@ -21,10 +21,6 @@ type RateExerciseQuery = {
 export const exercisesApi = createApi({
   reducerPath: "exercises",
 
-  //   baseQuery: axiosBaseQuery({
-  //     baseUrl: BASE_URL as string,
-  //   }),
-
   baseQuery: axiosBaseQuery(),
 
   endpoints: builder => ({

@@ -1,15 +1,13 @@
 import { Box, Container, Stack } from "@mui/material";
-import React, { FC } from "react";
 
-interface IFavoritesProps {
-  //...
-}
-
-const Favorites: FC<IFavoritesProps> = () => {
+const Favorites = () => {
   return (
     <Box component="section">
       <Container sx={{ outline: "1px solid tomato" }}>
-        <Stack direction={{ xs: "column", xl: "row" }} spacing={{ xl: 16 }}>
+        <Stack
+          direction={{ xs: "column", xl: "row" }}
+          spacing={{ xl: 16 }}
+        >
           <Box sx={{ outline: "1px solid green", width: "100%" }}>Quotes</Box>
 
           <Box

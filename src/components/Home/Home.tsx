@@ -1,19 +1,15 @@
 import Hero from "components/Hero";
-import { FC, Suspense } from "react";
+import { Suspense } from "react";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { Outlet } from "react-router";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "router";
 
-interface IHomeProps {
-  //...
-}
-
-const StyledNavLink = styled(NavLink)(({ theme }) => ({
+const StyledNavLink = styled(NavLink)(() => ({
   "&.active": { color: "red" },
 }));
 
-const Home: FC<IHomeProps> = () => {
+const Home = () => {
   return (
     <>
       <Hero />

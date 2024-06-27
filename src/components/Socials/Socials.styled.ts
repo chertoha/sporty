@@ -35,7 +35,7 @@ export const StyledLink = styled(Link, {
   },
 }));
 
-export const List = styled("ul")(({ theme }) => ({
+export const List = styled("ul")(() => ({
   display: "flex",
   columnGap: 12,
 }));

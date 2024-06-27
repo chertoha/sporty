@@ -36,7 +36,6 @@ const CardSection: FC<ICardSectionProps> = ({ filterKey }) => {
 
   console.log("res", data.results);
 
-  // return null
   return (
     <div>
       {filterValue ? (
