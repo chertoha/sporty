@@ -6,6 +6,8 @@
   ],
   "ignorePatterns": ["src/**/*.svg"],
 
+  "parser": "@typescript-eslint/parser",
+
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
 
@@ -17,7 +19,9 @@
         "caughtErrors": "all",
         "caughtErrorsIgnorePattern": "^_",
         "destructuredArrayIgnorePattern": "^_",
+
         "varsIgnorePattern": "^_",
+
         "ignoreRestSiblings": true
       }
     ]
