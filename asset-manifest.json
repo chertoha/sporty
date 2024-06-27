@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/sporty/static/js/main.0be60963.js",
-    "static/js/965.6a484eca.chunk.js": "/sporty/static/js/965.6a484eca.chunk.js",
-    "static/js/532.9b8f09ff.chunk.js": "/sporty/static/js/532.9b8f09ff.chunk.js",
+    "main.js": "/sporty/static/js/main.29550783.js",
+    "static/js/612.56dd7af2.chunk.js": "/sporty/static/js/612.56dd7af2.chunk.js",
+    "static/js/532.43abbdd1.chunk.js": "/sporty/static/js/532.43abbdd1.chunk.js",
     "static/js/787.2023ac86.chunk.js": "/sporty/static/js/787.2023ac86.chunk.js",
     "static/media/hero-desktop@2x.jpg": "/sporty/static/media/hero-desktop@2x.587eac5ce54846e49d24.jpg",
     "static/media/hero-tab@2x.jpg": "/sporty/static/media/hero-tab@2x.256c70270a3293713200.jpg",
@@ -23,12 +23,12 @@
     "static/media/facebook.svg": "/sporty/static/media/facebook.b35034b64829d8294bc10ff62783d27d.svg",
     "static/media/arrow.svg": "/sporty/static/media/arrow.e524a8ed02f2cca5e0e77ca8521cd2a5.svg",
     "static/media/close.svg": "/sporty/static/media/close.54a3c11bec9647bc391c686b968aef5c.svg",
-    "main.0be60963.js.map": "/sporty/static/js/main.0be60963.js.map",
-    "965.6a484eca.chunk.js.map": "/sporty/static/js/965.6a484eca.chunk.js.map",
-    "532.9b8f09ff.chunk.js.map": "/sporty/static/js/532.9b8f09ff.chunk.js.map",
+    "main.29550783.js.map": "/sporty/static/js/main.29550783.js.map",
+    "612.56dd7af2.chunk.js.map": "/sporty/static/js/612.56dd7af2.chunk.js.map",
+    "532.43abbdd1.chunk.js.map": "/sporty/static/js/532.43abbdd1.chunk.js.map",
     "787.2023ac86.chunk.js.map": "/sporty/static/js/787.2023ac86.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.0be60963.js"
+    "static/js/main.29550783.js"
   ]
 }
