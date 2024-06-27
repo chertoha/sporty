@@ -28,7 +28,7 @@ const RateBar: FC<IRateBarProps> = ({
         emptyIcon={<StarRateRoundedIcon fontSize="inherit" />}
         name="simple-controlled"
         value={value}
-        onChange={(event, newValue) => {
+        onChange={(_event, newValue) => {
           setValue && setValue(newValue);
         }}
       />

@@ -84,7 +84,7 @@ const ExercisesList: FC<IExercisesListProps> = ({ filterKey, filterValue }) => {
             md={6}
           >
             <ExerciseCard
-              onStart={() => {}}
+              // onStart={() => {}}
               // type="favorite"
               viewport={viewport}
               exercise={exercise}

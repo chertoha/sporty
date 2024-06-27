@@ -3,7 +3,7 @@ import { IconButton, styled } from "@mui/material";
 export const ModalContainer = styled("div")(({ theme }) => ({
   width: "90%",
   minHeight: 100,
-  position: "absolute" as "absolute",
+  position: "absolute",
   top: "15%",
   left: "50%",
   transform: "translateX(-50%)",
@@ -18,7 +18,7 @@ export const ModalContainer = styled("div")(({ theme }) => ({
 
 export const CloseButton = styled(IconButton)(({ theme }) => ({
   padding: 0,
-  position: "absolute" as "absolute",
+  position: "absolute",
   top: 14,
   right: 14,
   width: 24,

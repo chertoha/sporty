@@ -12,7 +12,7 @@ import { ViewportSize } from "hooks/useWindowSize";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
-  onStart: () => void;
+  // onStart: () => void;
   onDelete?: () => void;
   exercise: Exercise;
   viewport: ViewportSize;
