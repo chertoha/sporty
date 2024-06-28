@@ -1,13 +1,9 @@
 import Hero from "components/Hero";
+import FilterNav from "components/FilterNav";
+
 import { Suspense } from "react";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { Outlet } from "react-router";
-import { NavLink } from "react-router-dom";
-import { ROUTES } from "router";
-
-const StyledNavLink = styled(NavLink)(() => ({
-  "&.active": { color: "red" },
-}));
 
 const Home = () => {
   return (
@@ -18,29 +14,49 @@ const Home = () => {
         component="section"
         sx={{ pt: { xs: 20, md: 32 } }}
       >
-        <Container sx={{ outline: "1px solid grey" }}>
+        <Container>
           <Stack
-            direction="row"
             justifyContent="space-between"
-            alignItems="center"
+            sx={{
+              flexDirection: { xs: "column", xl: "row" },
+              alignItems: { xl: "center" },
+            }}
           >
-            <Box>
-              <Typography variant="h2">Exercises</Typography>
-            </Box>
+            <Typography variant="h2">Exercises</Typography>
 
-            <Stack
-              direction="row"
-              spacing={10}
+            <Box
+              sx={{
+                mt: { xs: "20px", md: "32px", xl: 0 },
+                display: { md: "flex" },
+                alignItems: "center",
+                justifyContent: { md: "space-between", xl: "unset" },
+                columnGap: { xl: "30px" },
+              }}
             >
-              <StyledNavLink to={ROUTES.MUSCLES}>Muscles</StyledNavLink>
-              <StyledNavLink to={ROUTES.BODY_PARTS}>Body parts</StyledNavLink>
-              <StyledNavLink to={ROUTES.EQUIPMENT}>Equipment</StyledNavLink>
-            </Stack>
+              {/* <Box sx={{ py: { xs: "20px", md: 0 } }}>Search</Box>
+
+              <Stack
+                direction="row"
+                spacing={10}
+              >
+                <StyledNavLink to={ROUTES.MUSCLES}>Muscles</StyledNavLink>
+                <StyledNavLink to={ROUTES.BODY_PARTS}>Body parts</StyledNavLink>
+                <StyledNavLink to={ROUTES.EQUIPMENT}>Equipment</StyledNavLink>
+              </Stack> */}
+
+              <FilterNav />
+            </Box>
           </Stack>
 
           <Stack
             direction={{ xs: "column", xl: "row-reverse" }}
             spacing={{ xl: 16 }}
+            sx={{
+              mt: {
+                xs: "20px",
+                md: "32px",
+              },
+            }}
           >
             <Box
               sx={{
@@ -49,7 +65,6 @@ const Home = () => {
                   xl: 900,
                 },
                 flexShrink: 0,
-                outline: "1px solid red",
               }}
             >
               <Suspense>

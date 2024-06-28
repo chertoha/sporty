@@ -3,7 +3,7 @@ import Layout from "components/Layout";
 import TestPage from "pages/TestPage";
 
 import { lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
@@ -28,7 +28,7 @@ const routes = [
         children: [
           {
             index: true,
-            element: <CardSection filterKey="Muscles" />,
+            element: <Navigate to={ROUTES.MUSCLES} />,
           },
           {
             path: ROUTES.MUSCLES,

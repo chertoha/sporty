@@ -13,3 +13,5 @@ focus on all active elements
 exercise popup -> NEED PLUG FOR EMPTY IMAGE
 
 refactor TrimText to css styles
+
+helmet descriptions

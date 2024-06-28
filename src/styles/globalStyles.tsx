@@ -14,6 +14,10 @@ export default (
         padding: 0,
         margin: 0,
       },
+
+      a: {
+        textDecoration: "none",
+      },
     }}
   />
 );
