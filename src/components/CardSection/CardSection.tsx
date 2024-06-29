@@ -1,12 +1,13 @@
 import Exercises from "components/ExercisesList";
+import FilterList from "components/FilterList";
+
 import { FilterKey } from "helpers/filterKey";
 import {
   FILTERS_DEFAULT_LIMIT,
   FILTERS_DEFAULT_PAGE,
 } from "helpers/queryConfig";
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useGetFiltersQuery } from "../../redux/filters/filtersApi";
-import FilterList from "components/FilterList";
 import { exerciseQueryVocabulary } from "config/exerciseQueryVocabulary";
 
 interface ICardSectionProps {

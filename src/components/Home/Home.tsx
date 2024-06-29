@@ -1,13 +1,10 @@
 import Hero from "components/Hero";
-import { Suspense } from "react";
-import { Box, Container, Stack, styled, Typography } from "@mui/material";
-import { Outlet } from "react-router";
-import { NavLink } from "react-router-dom";
-import { ROUTES } from "router";
+import FilterNav from "components/FilterNav";
+import styles from "./Home.styled";
 
-const StyledNavLink = styled(NavLink)(() => ({
-  "&.active": { color: "red" },
-}));
+import { Suspense } from "react";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import { Outlet } from "react-router";
 
 const Home = () => {
   return (
@@ -16,48 +13,32 @@ const Home = () => {
 
       <Box
         component="section"
-        sx={{ pt: { xs: 20, md: 32 } }}
+        sx={styles.main}
       >
-        <Container sx={{ outline: "1px solid grey" }}>
+        <Container>
           <Stack
-            direction="row"
             justifyContent="space-between"
-            alignItems="center"
+            sx={styles.exercises}
           >
-            <Box>
-              <Typography variant="h2">Exercises</Typography>
-            </Box>
+            <Typography variant="h2">Exercises</Typography>
 
-            <Stack
-              direction="row"
-              spacing={10}
-            >
-              <StyledNavLink to={ROUTES.MUSCLES}>Muscles</StyledNavLink>
-              <StyledNavLink to={ROUTES.BODY_PARTS}>Body parts</StyledNavLink>
-              <StyledNavLink to={ROUTES.EQUIPMENT}>Equipment</StyledNavLink>
-            </Stack>
+            <Box sx={styles.nav}>
+              <FilterNav />
+            </Box>
           </Stack>
 
           <Stack
             direction={{ xs: "column", xl: "row-reverse" }}
             spacing={{ xl: 16 }}
+            sx={styles.cards}
           >
-            <Box
-              sx={{
-                width: {
-                  xs: "100%",
-                  xl: 900,
-                },
-                flexShrink: 0,
-                outline: "1px solid red",
-              }}
-            >
+            <Box sx={styles.filter}>
               <Suspense>
                 <Outlet />
               </Suspense>
             </Box>
 
-            <Box sx={{ outline: "1px solid green", width: "100%" }}>Quotes</Box>
+            <Box sx={styles.quote}>Quotes</Box>
           </Stack>
         </Container>
       </Box>

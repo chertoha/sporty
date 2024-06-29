@@ -11,6 +11,7 @@ const HomePage = () => {
           content="description content"
         />
       </Helmet>
+
       <Home />
     </>
   );
