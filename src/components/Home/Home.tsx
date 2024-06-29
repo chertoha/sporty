@@ -5,6 +5,7 @@ import styles from "./Home.styled";
 import { Suspense } from "react";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { Outlet } from "react-router";
+import Loader from "components/Loader";
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
             sx={styles.cards}
           >
             <Box sx={styles.filter}>
-              <Suspense>
+              <Suspense fallback={<Loader />}>
                 <Outlet />
               </Suspense>
             </Box>

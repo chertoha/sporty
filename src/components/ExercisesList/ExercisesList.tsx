@@ -12,6 +12,7 @@ import { FilterKeyQueryType } from "config/exerciseQueryVocabulary";
 import { Grid } from "@mui/material";
 import ExerciseCard from "components/UIKit/ExerciseCard";
 import { useWindowSize } from "hooks/useWindowSize";
+import Loader from "components/Loader";
 
 interface IExercisesListProps {
   filterKey: FilterKeyQueryType;
@@ -61,38 +62,42 @@ const ExercisesList: FC<IExercisesListProps> = ({ filterKey, filterValue }) => {
 
   /* --------------------------------------------------------------------- */
 
-  if (isFetching) return <div>Loader component... (Exercises)</div>;
+  // if (isFetching) return <div>Loader component... (Exercises)</div>;
   if (isError) return <div>Error Component (Exercises)</div>;
   if (!data) return null;
 
   console.log(data);
 
   return (
-    <div>
-      <Grid
-        container
-        component="ul"
-        columnSpacing={{ md: 8 }}
-        rowSpacing={{ xs: 10, md: 16 }}
-      >
-        {data.results.map(exercise => (
-          <Grid
-            key={exercise._id}
-            component="li"
-            item
-            xs={12}
-            md={6}
-          >
-            <ExerciseCard
-              // onStart={() => {}}
-              // type="favorite"
-              viewport={viewport}
-              exercise={exercise}
-            />
-          </Grid>
-        ))}
-      </Grid>
-    </div>
+    <>
+      <div>
+        <Grid
+          container
+          component="ul"
+          columnSpacing={{ md: 8 }}
+          rowSpacing={{ xs: 10, md: 16 }}
+        >
+          {data.results.map(exercise => (
+            <Grid
+              key={exercise._id}
+              component="li"
+              item
+              xs={12}
+              md={6}
+            >
+              <ExerciseCard
+                // onStart={() => {}}
+                // type="favorite"
+                viewport={viewport}
+                exercise={exercise}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+
+      {isFetching && <Loader />}
+    </>
   );
 };
 

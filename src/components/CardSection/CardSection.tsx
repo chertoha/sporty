@@ -9,6 +9,7 @@ import {
 import { FC, useEffect, useState } from "react";
 import { useGetFiltersQuery } from "../../redux/filters/filtersApi";
 import { exerciseQueryVocabulary } from "config/exerciseQueryVocabulary";
+import Loader from "components/Loader";
 
 interface ICardSectionProps {
   filterKey: FilterKey;
@@ -31,26 +32,29 @@ const CardSection: FC<ICardSectionProps> = ({ filterKey }) => {
     limit: FILTERS_DEFAULT_LIMIT,
   });
 
-  if (isFetching) return <div>Loader component... (CardSection)</div>;
   if (isError) return <div>Error Component (CardSection)</div>;
   if (!data) return null;
 
   console.log("res", data.results);
 
   return (
-    <div>
-      {filterValue ? (
-        <Exercises
-          filterKey={exerciseQueryVocabulary(filterKey)}
-          filterValue={filterValue}
-        />
-      ) : (
-        <FilterList
-          list={data.results}
-          onOpen={onOpenExercises}
-        />
-      )}
-    </div>
+    <>
+      <div>
+        {filterValue ? (
+          <Exercises
+            filterKey={exerciseQueryVocabulary(filterKey)}
+            filterValue={filterValue}
+          />
+        ) : (
+          <FilterList
+            list={data.results}
+            onOpen={onOpenExercises}
+          />
+        )}
+      </div>
+
+      {isFetching && <Loader />}
+    </>
   );
 };
 
