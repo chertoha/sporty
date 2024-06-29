@@ -1,4 +1,3 @@
-import React from "react";
 import { GlobalStyles } from "@mui/material";
 import { theme } from "./theme";
 
@@ -7,6 +6,10 @@ export default (
     styles={{
       body: {
         backgroundColor: theme.palette.bg?.main,
+
+        "&.no-scroll": {
+          overflow: "hidden",
+        },
       },
 
       ul: {
@@ -17,6 +20,14 @@ export default (
 
       a: {
         textDecoration: "none",
+      },
+
+      button: {
+        padding: 0,
+        margin: 0,
+        backgroundColor: "transparent",
+        border: "none",
+        cursor: "pointer",
       },
     }}
   />

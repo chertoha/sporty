@@ -4,14 +4,16 @@ import { List, StyledLink } from "./Socials.styled";
 
 interface ISocialsProps {
   inverse?: boolean;
+  size?: number;
 }
 
-const Socials: FC<ISocialsProps> = ({ inverse = false }) => {
+const Socials: FC<ISocialsProps> = ({ inverse = false, size }) => {
   return (
     <List>
       {socialList.map(({ id, label, link, Icon }) => (
         <li key={id}>
           <StyledLink
+            size={size}
             to={link}
             target="_blank"
             aria-label={label}

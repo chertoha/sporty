@@ -2,12 +2,12 @@ import { alpha, styled } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link, {
-  shouldForwardProp: prop => prop !== "inverse",
-})<{ inverse: boolean }>(({ theme, inverse }) => ({
+  shouldForwardProp: prop => prop !== "inverse" && prop !== "size",
+})<{ inverse: boolean; size?: number }>(({ theme, inverse, size }) => ({
   display: "block",
   color: inverse ? theme.palette.text.secondary : theme.palette.text.primary,
-  width: 40,
-  height: 40,
+  width: size ? size : 40,
+  height: size ? size : 40,
   padding: 8,
   border: "1px solid",
   borderColor: inverse
@@ -21,8 +21,8 @@ export const StyledLink = styled(Link, {
   }),
 
   [theme.breakpoints.up("md")]: {
-    width: 44,
-    height: 44,
+    width: size ? size : 44,
+    height: size ? size : 44,
   },
 
   "&>svg": {
