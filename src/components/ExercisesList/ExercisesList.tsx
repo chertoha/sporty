@@ -1,103 +1,39 @@
-import {
-  EXERCISES_DEFAULT_LIMIT,
-  EXERCISES_DEFAULT_PAGE,
-} from "helpers/queryConfig";
-import { FC } from "react";
-import {
-  // useGetExerciseByIdQuery,
-  useGetExercisesQuery,
-  // useRateExerciseMutation,
-} from "../../redux/exercises/exercisesApi";
-import { FilterKeyQueryType } from "config/exerciseQueryVocabulary";
-import { Grid } from "@mui/material";
 import ExerciseCard from "components/UIKit/ExerciseCard";
+
+import { FC } from "react";
+import { Grid } from "@mui/material";
 import { useWindowSize } from "hooks/useWindowSize";
-import Loader from "components/Loader";
+import { Exercise } from "types/dataTypes";
 
 interface IExercisesListProps {
-  filterKey: FilterKeyQueryType;
-  filterValue: string;
+  exercises: Exercise[];
 }
 
-const ExercisesList: FC<IExercisesListProps> = ({ filterKey, filterValue }) => {
-  console.log({ [filterKey]: filterValue });
-
+const ExercisesList: FC<IExercisesListProps> = ({ exercises }) => {
   const viewport = useWindowSize();
 
-  /* --------------------------------------------------------------------- */
-  const { data, isError, isFetching } = useGetExercisesQuery({
-    muscles: "",
-    bodypart: "",
-    equipment: "",
-    [filterKey]: filterValue,
-    keyword: "",
-    page: EXERCISES_DEFAULT_PAGE,
-    limit: EXERCISES_DEFAULT_LIMIT,
-  });
-  /* --------------------------------------------------------------------- */
-  //
-  //
-  //
-  /* --------------------------------------------------------------------- */
-  // Get one exercise (for modal exercise window component )
-  //   const { data, isError, isFetching } = useGetExerciseByIdQuery(
-  //     "64f389465ae26083f39b17c7"
-  //   );
-  /* --------------------------------------------------------------------- */
-  //
-  //
-  //
-  /* --------------------------------------------------------------------- */
-  // Get one exercise (for modal exercise window component )
-
-  //   const [rateExercise, { isError }] = useRateExerciseMutation();
-  //   useEffect(() => {
-  //     rateExercise({
-  //       id: "64f389465ae26083f39b17c7",
-  //       rate: 2,
-  //       email: "a@mf11.com",
-  //       review: "Ha ha",
-  //     }).then(console.log);
-  //   }, []);
-
-  /* --------------------------------------------------------------------- */
-
-  // if (isFetching) return <div>Loader component... (Exercises)</div>;
-  if (isError) return <div>Error Component (Exercises)</div>;
-  if (!data) return null;
-
-  console.log(data);
-
   return (
-    <>
-      <div>
+    <Grid
+      container
+      component="ul"
+      columnSpacing={{ md: 8 }}
+      rowSpacing={{ xs: 10, md: 16 }}
+    >
+      {exercises.map(exercise => (
         <Grid
-          container
-          component="ul"
-          columnSpacing={{ md: 8 }}
-          rowSpacing={{ xs: 10, md: 16 }}
+          key={exercise._id}
+          component="li"
+          item
+          xs={12}
+          md={6}
         >
-          {data.results.map(exercise => (
-            <Grid
-              key={exercise._id}
-              component="li"
-              item
-              xs={12}
-              md={6}
-            >
-              <ExerciseCard
-                // onStart={() => {}}
-                // type="favorite"
-                viewport={viewport}
-                exercise={exercise}
-              />
-            </Grid>
-          ))}
+          <ExerciseCard
+            viewport={viewport}
+            exercise={exercise}
+          />
         </Grid>
-      </div>
-
-      {isFetching && <Loader />}
-    </>
+      ))}
+    </Grid>
   );
 };
 
