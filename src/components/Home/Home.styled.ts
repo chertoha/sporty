@@ -32,7 +32,9 @@ const filter: SxProps = {
   flexShrink: 0,
 };
 
-const quote: SxProps = { outline: "1px solid green", width: "100%" };
+const quote: SxProps = {
+  width: "100%",
+};
 
 const styles = { main, exercises, nav, cards, filter, quote };
 
