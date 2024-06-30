@@ -4,7 +4,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import styles from "./ExercisePopup.styled";
 
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 import {
   Heading,
@@ -18,7 +18,11 @@ import {
   Wrapper,
 } from "./ExercisePopup.styled";
 
-const ExercisePopup = () => {
+interface IExercisePopupProps {
+  openRatingPopup: () => void;
+}
+
+const ExercisePopup: FC<IExercisePopupProps> = ({ openRatingPopup }) => {
   const [rateValue, setRateValue] = useState<number | null>(0);
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const toggleFavorite = () => setIsFavorite(prevState => !prevState);
@@ -91,6 +95,7 @@ const ExercisePopup = () => {
         <Button
           sx={styles.give}
           variant="outlined"
+          onClick={openRatingPopup}
         >
           Give a rating
         </Button>

@@ -1,6 +1,8 @@
 import { IconButton, styled } from "@mui/material";
 
-export const ModalContainer = styled("div")(({ theme }) => ({
+export const ModalContainer = styled("div", {
+  shouldForwardProp: prop => prop !== "sizes",
+})<{ sizes?: number[] }>(({ theme, sizes }) => ({
   width: "90%",
   minHeight: 100,
   position: "absolute",
@@ -11,9 +13,9 @@ export const ModalContainer = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.bg?.dark,
   borderRadius: 20,
 
-  [theme.breakpoints.up("sm")]: { width: "335px" },
-  [theme.breakpoints.up("md")]: { width: "704px" },
-  [theme.breakpoints.up("xl")]: { width: "708px" },
+  [theme.breakpoints.up("sm")]: { width: sizes ? sizes[0] : "335px" },
+  [theme.breakpoints.up("md")]: { width: sizes ? sizes[1] : "704px" },
+  [theme.breakpoints.up("xl")]: { width: sizes ? sizes[2] : "708px" },
 }));
 
 export const CloseButton = styled(IconButton)(({ theme }) => ({

@@ -15,5 +15,5 @@ export const control: SxProps<Theme> = {
 export const button: SxProps<Theme> = {
   display: "block",
   width: { xs: "100%" },
-  mt: "20px",
+  mt: "24px",
 };

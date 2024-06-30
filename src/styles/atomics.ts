@@ -11,3 +11,8 @@ export const flexBetween: SxProps = {
   alignItems: "center",
   justifyContent: "space-between",
 };
+
+export const flexAlign: SxProps = {
+  display: "flex",
+  alignItems: "center",
+};
