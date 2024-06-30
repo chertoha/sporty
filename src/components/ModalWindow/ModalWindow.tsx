@@ -8,9 +8,15 @@ interface IModalWindowProps {
   children: ReactElement;
   isOpen: boolean;
   close: () => void;
+  sizes?: number[];
 }
 
-const ModalWindow: FC<IModalWindowProps> = ({ children, isOpen, close }) => {
+const ModalWindow: FC<IModalWindowProps> = ({
+  children,
+  isOpen,
+  close,
+  sizes,
+}) => {
   return (
     <Modal
       open={isOpen}
@@ -19,7 +25,7 @@ const ModalWindow: FC<IModalWindowProps> = ({ children, isOpen, close }) => {
         overflow: "auto",
       }}
     >
-      <ModalContainer>
+      <ModalContainer sizes={sizes}>
         <CloseButton onClick={close}>
           <CloseIcon />
         </CloseButton>

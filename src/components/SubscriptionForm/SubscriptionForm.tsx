@@ -1,9 +1,39 @@
-import { Button, FormControl, TextField, Typography } from "@mui/material";
 import * as styles from "./SubscriptionForm.styled";
 
+import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { subscriptionFormSchema } from "utils/validationScemas";
+import { validationErrorMessage } from "styles/common";
+
+export type SubscriptionFormValues = {
+  email: string;
+};
+
+const initialValues: SubscriptionFormValues = { email: "" };
+
 const SubscriptionForm = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(subscriptionFormSchema),
+    defaultValues: initialValues,
+  });
+
+  const onSubmit = (values: SubscriptionFormValues) => {
+    console.log(values);
+
+    reset(initialValues);
+  };
+
   return (
-    <form>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+    >
       <Typography sx={styles.text}>
         Subscribe and learn about new exercises!
       </Typography>
@@ -13,7 +43,17 @@ const SubscriptionForm = () => {
           variant="outlined"
           placeholder="Email"
           type="email"
+          {...register("email")}
         />
+
+        {errors.email && (
+          <Box
+            component="span"
+            sx={validationErrorMessage}
+          >
+            {errors.email.message}
+          </Box>
+        )}
       </FormControl>
 
       <Button

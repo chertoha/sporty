@@ -15,3 +15,5 @@ exercise popup -> NEED PLUG FOR EMPTY IMAGE
 refactor TrimText to css styles
 
 helmet descriptions
+
+privacy policy -> links or delete

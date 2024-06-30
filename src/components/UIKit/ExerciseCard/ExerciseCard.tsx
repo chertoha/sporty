@@ -4,15 +4,15 @@ import CardName from "./CardName";
 import CardHeader from "./CardHeader";
 import ModalWindow from "components/ModalWindow";
 
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Box } from "@mui/material";
 import { Exercise } from "types/dataTypes";
 import { useModalWindow } from "hooks/useModalWindow";
 import { ViewportSize } from "hooks/useWindowSize";
+import RatingPopup from "components/RatingPopup";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
-  // onStart: () => void;
   onDelete?: () => void;
   exercise: Exercise;
   viewport: ViewportSize;
@@ -25,6 +25,15 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
 }) => {
   const { _id, name, rating } = exercise;
   const { isOpen, close, open } = useModalWindow();
+
+  const [shouldRate, setShouldRate] = useState<boolean>(false);
+  const openRatingPopup = () => setShouldRate(true);
+  const closeRatingPopup = () => setShouldRate(false);
+
+  const onCloseHandler = () => {
+    closeRatingPopup();
+    close();
+  };
 
   return (
     <Box
@@ -52,9 +61,14 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
 
       <ModalWindow
         isOpen={isOpen}
-        close={close}
+        close={onCloseHandler}
+        sizes={shouldRate ? [335, 430, 430] : undefined}
       >
-        <ExercisePopup />
+        {shouldRate ? (
+          <RatingPopup closeRatingPopup={closeRatingPopup} />
+        ) : (
+          <ExercisePopup openRatingPopup={openRatingPopup} />
+        )}
       </ModalWindow>
     </Box>
   );
