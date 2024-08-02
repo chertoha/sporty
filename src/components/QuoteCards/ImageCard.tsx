@@ -1,33 +1,25 @@
+import sources from "utils/quoteImageSources";
+
+import { FC } from "react";
 import { Box } from "@mui/material";
+import { ImageCardWrapper } from "./QuoteCards.styled";
 
-const ImageCard = () => {
+interface IImageCardProps {
+  isFavorites?: boolean;
+}
+
+const ImageCard: FC<IImageCardProps> = ({ isFavorites = false }) => {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        borderRadius: "20px",
-        height: { sx: "242px", md: "249px", xl: "242px" },
-        overflow: "hidden",
-      }}
-    >
+    <ImageCardWrapper isFavorites={isFavorites}>
       <Box component="picture">
-        <source
-          media="(max-width: 767.98px)"
-          srcSet={`${process.env.PUBLIC_URL}/quote/quote-1-mob@1x.jpg 1x, ${process.env.PUBLIC_URL}/quote/quote-1-mob@2x.jpg 2x`}
-          type="image/jpeg"
-        />
-
-        <source
-          media="(max-width: 1439.98px)"
-          srcSet={`${process.env.PUBLIC_URL}/quote/quote-1-tab@1x.jpg 1x, ${process.env.PUBLIC_URL}/quote/quote-1-tab@2x.jpg 2x`}
-          type="image/jpeg"
-        />
-
-        <source
-          media="(min-width: 1440px)"
-          srcSet={`${process.env.PUBLIC_URL}/quote/quote-1-desk@1x.jpg 1x, ${process.env.PUBLIC_URL}/quote/quote-1-desk@2x.jpg 2x`}
-          type="image/jpeg"
-        />
+        {sources.map(({ media, srcSet }) => (
+          <source
+            key={media}
+            media={media}
+            srcSet={`${process.env.PUBLIC_URL}${srcSet(isFavorites)._1x} 1x, ${process.env.PUBLIC_URL}${srcSet(isFavorites)._2x} 2x`}
+            type="image/jpeg"
+          />
+        ))}
 
         <Box
           component="img"
@@ -44,7 +36,7 @@ const ImageCard = () => {
           loading="lazy"
         ></Box>
       </Box>
-    </Box>
+    </ImageCardWrapper>
   );
 };
 

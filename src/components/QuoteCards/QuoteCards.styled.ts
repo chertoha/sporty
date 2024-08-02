@@ -1,17 +1,91 @@
-import { SxProps, Theme, alpha } from "@mui/material";
+import { Box, SxProps, Theme, alpha, styled } from "@mui/material";
 
-const quoteWrapper: SxProps = {
+export const QuoteWrapper = styled(Box, {
+  shouldForwardProp: prop => prop !== "isFavorites",
+})<{ isFavorites?: boolean }>(({ theme, isFavorites }) => ({
   position: "relative",
-  padding: { xs: "20px", md: "40px" },
-  backgroundColor: "bg.dark",
-  color: "text.secondary",
+  backgroundColor: theme.palette.bg?.dark,
+  color: theme.palette.text.secondary,
   borderRadius: "20px",
-  height: {
-    sm: "209px",
-    md: "249px",
-    xl: "242px",
+
+  [theme.breakpoints.up("xs")]: {
+    padding: "20px",
   },
-};
+  [theme.breakpoints.up("sm")]: {
+    height: "209px",
+    ...(isFavorites && { height: "auto" }),
+  },
+  [theme.breakpoints.up("md")]: {
+    padding: "40px",
+    height: "249px",
+    ...(isFavorites && { height: "auto" }),
+  },
+  [theme.breakpoints.up("xl")]: {
+    height: "242px",
+    ...(isFavorites && { height: "auto" }),
+  },
+}));
+
+export const ImageCardWrapper = styled(Box, {
+  shouldForwardProp: prop => prop !== "isFavorites",
+})<{ isFavorites?: boolean }>(({ theme, isFavorites }) => ({
+  width: "100%",
+  borderRadius: "20px",
+  overflow: "hidden",
+
+  [theme.breakpoints.up("xs")]: {
+    height: isFavorites ? "119px" : "242px",
+  },
+  [theme.breakpoints.up("md")]: {
+    height: isFavorites ? "141px" : "249px",
+  },
+  [theme.breakpoints.up("xl")]: {
+    height: isFavorites ? "141px" : "242px",
+  },
+}));
+
+export const AdviceCardWrapper = styled(Box, {
+  shouldForwardProp: prop => prop !== "isFavorites",
+})<{ isFavorites?: boolean }>(({ theme, isFavorites }) => ({
+  position: "relative",
+  backgroundColor: theme.palette.bg?.light,
+  color: theme.palette.text.secondary,
+  borderRadius: "20px",
+  width: "100%",
+
+  [theme.breakpoints.up("xs")]: {
+    padding: "20px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    height: isFavorites ? "119px" : "209px",
+  },
+  [theme.breakpoints.up("md")]: {
+    padding: isFavorites ? "25px" : "40px",
+    height: isFavorites ? "141px" : "249px",
+  },
+  [theme.breakpoints.up("xl")]: {
+    height: isFavorites ? "141px" : "315px",
+  },
+}));
+
+export const AdviceCardIconWrapper = styled(Box, {
+  shouldForwardProp: prop => prop !== "isFavorites",
+})<{ isFavorites?: boolean }>(({ theme, isFavorites }) => ({
+  alignItems: "center",
+  justifyContent: "center",
+  flexShrink: 0,
+  width: isFavorites ? "20px" : "32px",
+  height: isFavorites ? "20px" : "32px",
+  borderRadius: "50%",
+  backgroundColor: theme.palette.bg?.dark,
+
+  [theme.breakpoints.up("xs")]: {
+    display: "none",
+  },
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+  },
+}));
 
 const quote: SxProps = {
   position: "absolute",
@@ -48,6 +122,16 @@ const author: SxProps = {
   mt: { xs: "16px", md: "18px" },
 };
 
-const styles = { quoteWrapper, quote, icon, title, text, author };
+const adviceText: SxProps = {
+  color: "text.primary",
+  mt: { xs: "16px", md: "20px" },
+  textOverflow: {
+    xl: "unset",
+  },
+
+  overflow: { xl: "unset" },
+};
+
+const styles = { quote, icon, title, text, author, adviceText };
 
 export default styles;

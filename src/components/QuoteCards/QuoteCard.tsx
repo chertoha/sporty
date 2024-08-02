@@ -1,12 +1,17 @@
-import styles from "./QuoteCards.styled";
+import styles, { QuoteWrapper } from "./QuoteCards.styled";
 
+import { FC } from "react";
 import { Box, Stack, Typography, alpha } from "@mui/material";
 import { ReactComponent as RunnerIcon } from "assets/images/icons/runner.svg";
 import { ReactComponent as QuoteIcon } from "assets/images/icons/quotes.svg";
 
-const QuoteCard = () => {
+interface IQuoteCardProps {
+  isFavorites?: boolean;
+}
+
+const QuoteCard: FC<IQuoteCardProps> = ({ isFavorites = false }) => {
   return (
-    <Box sx={styles.quoteWrapper}>
+    <QuoteWrapper isFavorites={isFavorites}>
       <Box sx={styles.quote}>
         <QuoteIcon
           width="100%"
@@ -43,7 +48,7 @@ const QuoteCard = () => {
           </Typography>
         </Box>
       </Stack>
-    </Box>
+    </QuoteWrapper>
   );
 };
 
