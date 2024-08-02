@@ -1,11 +1,12 @@
 import Hero from "components/Hero";
 import FilterNav from "components/FilterNav";
 import styles from "./Home.styled";
+import Loader from "components/Loader";
+import MainQuoteList from "components/QuoteCards/MainQuoteList";
 
 import { Suspense } from "react";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { Outlet } from "react-router";
-import Loader from "components/Loader";
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
 
           <Stack
             direction={{ xs: "column", xl: "row-reverse" }}
-            spacing={{ xl: 16 }}
+            spacing={{ xs: "80px", md: "64px", xl: 16 }}
             sx={styles.cards}
           >
             <Box sx={styles.filter}>
@@ -39,7 +40,9 @@ const Home = () => {
               </Suspense>
             </Box>
 
-            <Box sx={styles.quote}>Quotes</Box>
+            <Box sx={styles.quote}>
+              <MainQuoteList />
+            </Box>
           </Stack>
         </Container>
       </Box>

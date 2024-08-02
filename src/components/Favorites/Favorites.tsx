@@ -1,28 +1,19 @@
-import { Box, Container, Stack } from "@mui/material";
+import FavoritesQuoteList from "components/QuoteCards/FavoritesQuoteList";
+import styles from "./Favorites.styled";
+
+import { Box, Container } from "@mui/material";
 
 const Favorites = () => {
   return (
     <Box component="section">
-      <Container sx={{ outline: "1px solid tomato" }}>
-        <Stack
-          direction={{ xs: "column", xl: "row" }}
-          spacing={{ xl: 16 }}
-        >
-          <Box sx={{ outline: "1px solid green", width: "100%" }}>Quotes</Box>
-
-          <Box
-            sx={{
-              width: {
-                xs: "100%",
-                xl: 850,
-              },
-              flexShrink: 0,
-              outline: "1px solid red",
-            }}
-          >
-            Cards
+      <Container>
+        <Box sx={styles.wrapper}>
+          <Box width="100%">
+            <FavoritesQuoteList />
           </Box>
-        </Stack>
+
+          <Box sx={styles.cards}>Cards</Box>
+        </Box>
       </Container>
     </Box>
   );
