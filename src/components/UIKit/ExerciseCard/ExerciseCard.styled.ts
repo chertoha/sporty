@@ -1,5 +1,12 @@
 import { SxProps } from "@mui/material";
 
+const wrapper: SxProps = {
+  width: "100%",
+  bgcolor: "bg.light",
+  borderRadius: "15px",
+  padding: [8],
+};
+
 const chip: SxProps = {
   textTransform: "uppercase",
 
@@ -47,6 +54,6 @@ const runner: SxProps = {
 
 const name: SxProps = { "&::first-letter": { textTransform: "uppercase" } };
 
-const styles = { chip, star, trash, start, runner, name };
+const styles = { chip, star, trash, start, runner, name, wrapper };
 
 export default styles;

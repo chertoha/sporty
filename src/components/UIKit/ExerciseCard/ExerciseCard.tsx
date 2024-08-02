@@ -3,13 +3,14 @@ import CardData from "./CardData";
 import CardName from "./CardName";
 import CardHeader from "./CardHeader";
 import ModalWindow from "components/ModalWindow";
+import RatingPopup from "components/RatingPopup";
+import styles from "./ExerciseCard.styled";
 
 import { FC, useState } from "react";
 import { Box } from "@mui/material";
 import { Exercise } from "types/dataTypes";
 import { useModalWindow } from "hooks/useModalWindow";
 import { ViewportSize } from "hooks/useWindowSize";
-import RatingPopup from "components/RatingPopup";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
@@ -36,13 +37,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
   };
 
   return (
-    <Box
-      sx={{
-        bgcolor: "bg.light",
-        borderRadius: "15px",
-        padding: [8],
-      }}
-    >
+    <Box sx={styles.wrapper}>
       <CardHeader
         type={type}
         rating={rating}
