@@ -1,7 +1,7 @@
 import styles, { QuoteWrapper } from "./QuoteCards.styled";
 
 import { FC } from "react";
-import { Box, Stack, Typography, alpha } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { ReactComponent as RunnerIcon } from "assets/images/icons/runner.svg";
 import { ReactComponent as QuoteIcon } from "assets/images/icons/quotes.svg";
 

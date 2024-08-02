@@ -3,7 +3,6 @@ import ImageCard from "./ImageCard";
 import AdviceCard from "./AdviceCard";
 
 import { List, ListItem } from "@mui/material";
-import styles from "./QuoteCards.styled";
 
 const FavoritesQuoteList = () => {
   return (

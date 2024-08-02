@@ -1,6 +1,7 @@
-import { Box, Container, Stack } from "@mui/material";
 import FavoritesQuoteList from "components/QuoteCards/FavoritesQuoteList";
 import styles from "./Favorites.styled";
+
+import { Box, Container } from "@mui/material";
 
 const Favorites = () => {
   return (

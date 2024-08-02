@@ -1,11 +1,10 @@
+import { FC } from "react";
 import { Box, Stack, Typography, alpha } from "@mui/material";
 import { ReactComponent as DumbbellIcon } from "assets/images/icons/dumbbell.svg";
 import styles, {
   AdviceCardIconWrapper,
   AdviceCardWrapper,
-  QuoteWrapper,
 } from "./QuoteCards.styled";
-import { FC } from "react";
 
 interface IAdviceCardProps {
   isFavorites?: boolean;
