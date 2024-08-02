@@ -22,11 +22,33 @@ const cards: SxProps = {
 
   width: {
     xs: "100%",
-    xl: 850,
+    xl: "826px",
   },
   flexShrink: 0,
-  outline: "1px solid red",
 };
 
-const styles = { wrapper, cards };
+const quote: SxProps = {
+  width: {
+    xs: "100%",
+    xl: "auto",
+  },
+};
+
+const notFound: SxProps = {
+  display: "flex",
+  justifyContent: "center",
+  pt: {
+    md: "64px",
+    xl: "114px",
+  },
+};
+
+const notFoundText: SxProps = {
+  maxWidth: "554px",
+  textAlign: "center",
+  fontSize: { xs: 14, md: 18 },
+  lineHeight: { xs: 1.28, md: 1.33 },
+};
+
+const styles = { wrapper, cards, quote, notFound, notFoundText };
 export default styles;
