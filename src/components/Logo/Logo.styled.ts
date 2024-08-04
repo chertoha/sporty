@@ -8,4 +8,9 @@ export const StyledLink = styled(Link, {
   color: inverse ? theme.palette.bg?.main : theme.palette.bg?.dark,
   width: 132,
   height: 24,
+
+  fontSize: "24px",
+  lineHeight: 1,
+  fontWeight: "bold",
+  letterSpacing: "0.1em",
 }));

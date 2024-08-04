@@ -8,8 +8,6 @@ refactor TrimText to css styles
 
 privacy policy -> links or delete
 
-SPORTY -> LOGO
-
 favicon
 
 tests : {validaton, functions , async queries}

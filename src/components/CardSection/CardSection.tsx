@@ -29,7 +29,7 @@ const CardSection: FC<ICardSectionProps> = ({ filterKey }) => {
 
   useEffect(() => {
     setIsSearchVisible(!!filterValue);
-  }, [filterValue]);
+  }, [filterValue, setIsSearchVisible]);
 
   return (
     <div>
