@@ -29,6 +29,8 @@ export type Exercise = {
   popularity: number;
 };
 
+export type ExerciseKey = keyof Exercise;
+
 export type ExerciseData = {
   page: number;
   perPage: number;

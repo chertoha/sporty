@@ -3,7 +3,7 @@ import * as styles from "./SubscriptionForm.styled";
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { subscriptionFormSchema } from "utils/validationScemas";
+import { subscriptionFormSchema } from "utils/validation/validationSchemas";
 import { validationErrorMessage } from "styles/common";
 
 export type SubscriptionFormValues = {

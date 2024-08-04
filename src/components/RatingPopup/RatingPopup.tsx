@@ -2,30 +2,33 @@ import Rating from "./Rating";
 import EmailField from "./EmailField";
 import CommentField from "./CommentField";
 import styles from "./RatingPopup.styled";
+import Loader from "components/Loader";
 
 import { FC } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Box, Button, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
-import { ratingFormSchema } from "utils/validationScemas";
+import { ratingFormSchema } from "utils/validation/validationSchemas";
+import { useRateExerciseMutation } from "../../redux/exercises/exercisesApi";
+import { RatingFormValues } from "types/forms";
 
 interface IRatingPopupProps {
+  id: number | string;
   closeRatingPopup: () => void;
 }
 
-export type RatingFormValues = {
-  rating: number;
-  email: string;
-  comment?: string;
-};
-
 const initialValues: RatingFormValues = {
-  rating: 0,
+  rate: 0,
   email: "",
-  comment: "",
+  review: "",
 };
 
-const RatingPopup: FC<IRatingPopupProps> = ({ closeRatingPopup }) => {
+// notify 409 -> conflict email
+// notify errors -> something went wrong
+
+const RatingPopup: FC<IRatingPopupProps> = ({ id, closeRatingPopup }) => {
+  const [rateExercise, { isLoading }] = useRateExerciseMutation();
+
   const methods = useForm({
     resolver: yupResolver(ratingFormSchema),
     defaultValues: initialValues,
@@ -36,7 +39,14 @@ const RatingPopup: FC<IRatingPopupProps> = ({ closeRatingPopup }) => {
   const onSubmit = (values: RatingFormValues) => {
     console.log("submit", values);
 
-    closeRatingPopup();
+    rateExercise({ id, ...values })
+      .unwrap()
+      .then(() => {
+        closeRatingPopup();
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
@@ -64,9 +74,12 @@ const RatingPopup: FC<IRatingPopupProps> = ({ closeRatingPopup }) => {
           type="submit"
           variant="contained"
           sx={styles.submit}
+          disabled={isLoading}
         >
           Send
         </Button>
+
+        {isLoading && <Loader />}
       </Box>
     </FormProvider>
   );

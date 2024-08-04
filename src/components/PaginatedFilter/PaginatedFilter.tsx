@@ -28,8 +28,6 @@ const PaginatedFilter: FC<IPaginatedFilterProps> = ({
   if (isError) return <div>Error Component (CardSection)</div>;
   if (!data) return null;
 
-  console.log("res", data);
-
   return (
     <>
       <div>

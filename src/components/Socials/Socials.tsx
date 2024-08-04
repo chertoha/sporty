@@ -1,4 +1,4 @@
-import socialList from "utils/socialList";
+import socialList from "utils/data/socialList";
 import { FC } from "react";
 import { List, StyledLink } from "./Socials.styled";
 

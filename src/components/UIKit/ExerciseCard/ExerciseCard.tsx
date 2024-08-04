@@ -60,9 +60,15 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
         sizes={shouldRate ? [335, 430, 430] : undefined}
       >
         {shouldRate ? (
-          <RatingPopup closeRatingPopup={closeRatingPopup} />
+          <RatingPopup
+            id={_id}
+            closeRatingPopup={closeRatingPopup}
+          />
         ) : (
-          <ExercisePopup openRatingPopup={openRatingPopup} />
+          <ExercisePopup
+            id={_id}
+            openRatingPopup={openRatingPopup}
+          />
         )}
       </ModalWindow>
     </Box>

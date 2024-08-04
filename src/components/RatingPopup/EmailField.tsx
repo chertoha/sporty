@@ -2,8 +2,8 @@ import styles from "./RatingPopup.styled";
 
 import { useFormContext } from "react-hook-form";
 import { Box, FormControl, TextField } from "@mui/material";
-import { RatingFormValues } from "./RatingPopup";
 import { validationErrorMessage } from "styles/common";
+import { RatingFormValues } from "types/forms";
 
 const EmailField = () => {
   const {

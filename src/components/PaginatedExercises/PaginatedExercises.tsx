@@ -7,6 +7,8 @@ import { Box } from "@mui/material";
 import { useGetExercisesQuery } from "../../redux/exercises/exercisesApi";
 import { EXERCISES_DEFAULT_LIMIT } from "helpers/queryConfig";
 import { FilterKeyQueryType } from "config/exerciseQueryVocabulary";
+import { useSelector } from "react-redux";
+import { selectSearch } from "../../redux/search/selectors";
 
 interface IPaginatedExercisesProps {
   filterKey: FilterKeyQueryType;
@@ -18,13 +20,14 @@ const PaginatedExercises: FC<IPaginatedExercisesProps> = ({
   filterValue,
 }) => {
   const [page, setPage] = useState<number>(1);
+  const query = useSelector(selectSearch);
 
   const { data, isError, isFetching } = useGetExercisesQuery({
     muscles: "",
     bodypart: "",
     equipment: "",
     [filterKey]: filterValue,
-    keyword: "",
+    keyword: query,
     page,
     limit: EXERCISES_DEFAULT_LIMIT,
   });
