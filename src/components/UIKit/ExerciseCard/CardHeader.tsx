@@ -1,10 +1,10 @@
 import CardRating from "./CardRating";
 import styles from "./ExerciseCard.styled";
 
+import { FC } from "react";
 import { Button, Chip, IconButton, Stack } from "@mui/material";
 import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 import { ReactComponent as ArrowIcon } from "assets/images/icons/arrow.svg";
-import { FC } from "react";
 
 interface ICardHeaderProps {
   type: "exercise" | "favorite";
