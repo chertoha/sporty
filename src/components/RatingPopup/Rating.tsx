@@ -3,8 +3,8 @@ import styles from "./RatingPopup.styled";
 
 import { Box, Typography } from "@mui/material";
 import { Controller, useFormContext } from "react-hook-form";
-import { RatingFormValues } from "./RatingPopup";
 import { validationErrorMessage } from "styles/common";
+import { RatingFormValues } from "types/forms";
 
 const Rating = () => {
   const {
@@ -14,7 +14,7 @@ const Rating = () => {
 
   return (
     <Controller
-      name="rating"
+      name="rate"
       control={control}
       render={({ field: { value, onChange } }) => (
         <Box sx={styles.rate}>
@@ -32,12 +32,12 @@ const Rating = () => {
             size={24}
           />
 
-          {errors.rating && (
+          {errors.rate && (
             <Box
               component="span"
               sx={validationErrorMessage}
             >
-              {errors.rating.message}
+              {errors.rate.message}
             </Box>
           )}
         </Box>

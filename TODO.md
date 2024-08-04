@@ -4,6 +4,8 @@ filter list styles refactor
 exercises list refactor
 exercises list styles refactor
 
+notifications -> all http requests notify errors
+
 focus on all active elements
 
 exercise popup -> NEED PLUG FOR EMPTY IMAGE

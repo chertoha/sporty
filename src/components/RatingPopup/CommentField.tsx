@@ -2,8 +2,8 @@ import styles from "./RatingPopup.styled";
 
 import { useFormContext } from "react-hook-form";
 import { Box, FormControl, TextField } from "@mui/material";
-import { RatingFormValues } from "./RatingPopup";
 import { validationErrorMessage } from "styles/common";
+import { RatingFormValues } from "types/forms";
 
 const CommentField = () => {
   const {
@@ -18,15 +18,15 @@ const CommentField = () => {
         placeholder="Your comment"
         multiline
         rows={4}
-        {...register("comment")}
+        {...register("review")}
       />
 
-      {errors.comment && (
+      {errors.review && (
         <Box
           component="span"
           sx={validationErrorMessage}
         >
-          {errors.comment.message}
+          {errors.review.message}
         </Box>
       )}
     </FormControl>

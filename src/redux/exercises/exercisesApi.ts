@@ -12,10 +12,10 @@ type ExercisesQuery = {
 };
 
 type RateExerciseQuery = {
-  id: string;
+  id: string | number;
   rate: number;
   email: string;
-  review: string;
+  review?: string;
 };
 
 export const exercisesApi = createApi({
@@ -48,10 +48,10 @@ export const exercisesApi = createApi({
     }),
 
     rateExercise: builder.mutation<Exercise, RateExerciseQuery>({
-      query: ({ id, rate, email, review }) => ({
+      query: ({ id, ...data }) => ({
         url: `/exercises/${id}/rating`,
         method: "PATCH",
-        data: { rate, email, review },
+        data,
       }),
     }),
   }),

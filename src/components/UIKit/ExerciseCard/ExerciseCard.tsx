@@ -60,7 +60,10 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
         sizes={shouldRate ? [335, 430, 430] : undefined}
       >
         {shouldRate ? (
-          <RatingPopup closeRatingPopup={closeRatingPopup} />
+          <RatingPopup
+            id={_id}
+            closeRatingPopup={closeRatingPopup}
+          />
         ) : (
           <ExercisePopup
             id={_id}
