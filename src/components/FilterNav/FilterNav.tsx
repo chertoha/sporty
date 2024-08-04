@@ -3,13 +3,20 @@ import styles, { StyledNavLink } from "./FilterNav.styled";
 
 import { Box, Stack } from "@mui/material";
 import { ROUTES } from "router";
+import { FC } from "react";
 
-const FilterNav = () => {
+interface IFilterNavProps {
+  isSearchVisible: boolean;
+}
+
+const FilterNav: FC<IFilterNavProps> = ({ isSearchVisible }) => {
   return (
     <>
-      <Box sx={styles.search}>
-        <Search />
-      </Box>
+      {isSearchVisible && (
+        <Box sx={styles.search}>
+          <Search />
+        </Box>
+      )}
 
       <Stack
         direction="row"

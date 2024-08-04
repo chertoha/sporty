@@ -1,9 +1,3 @@
-filter list refactor
-filter list styles refactor
-
-exercises list refactor
-exercises list styles refactor
-
 notifications -> all http requests notify errors
 
 focus on all active elements
@@ -25,3 +19,5 @@ tests : {validaton, functions , async queries}
 search -> hide on filter. show onlu on exersices list
 
 check search query
+
+lighthouse
