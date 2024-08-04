@@ -67,6 +67,10 @@ export const ItemTitle = styled(Typography)(({ theme }) => ({
 
 export const ItemValue = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {},
+
+  "&:first-letter": {
+    textTransform: "uppercase",
+  },
 }));
 
 export const Text = styled(Typography)(({ theme }) => ({
@@ -76,7 +80,7 @@ export const Text = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("md")]: { marginTop: 16 },
 }));
 
-export const Toolbar = styled(Typography)(({ theme }) => ({
+export const ToolbarWrapper = styled(Typography)(({ theme }) => ({
   marginTop: 40,
 
   [theme.breakpoints.up("md")]: {

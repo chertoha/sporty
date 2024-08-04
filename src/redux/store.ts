@@ -1,3 +1,5 @@
+import searchSlice from "./search/slice";
+
 import { configureStore } from "@reduxjs/toolkit";
 import { exercisesApi } from "./exercises/exercisesApi";
 import { filtersApi } from "./filters/filtersApi";
@@ -10,6 +12,7 @@ export const store = configureStore({
     [exercisesApi.reducerPath]: exercisesApi.reducer,
     [quoteApi.reducerPath]: quoteApi.reducer,
     [subscriptionApi.reducerPath]: subscriptionApi.reducer,
+    [searchSlice.reducerPath]: searchSlice.reducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware()

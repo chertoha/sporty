@@ -40,7 +40,7 @@ export const exercisesApi = createApi({
       }),
     }),
 
-    getExerciseById: builder.query<Exercise, string>({
+    getExerciseById: builder.query<Exercise, string | number>({
       query: id => ({
         url: `/exercises/${id}`,
         method: "GET",

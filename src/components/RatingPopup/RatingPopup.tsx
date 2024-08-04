@@ -7,7 +7,7 @@ import { FC } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Box, Button, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
-import { ratingFormSchema } from "utils/validationScemas";
+import { ratingFormSchema } from "utils/validationSchemas";
 
 interface IRatingPopupProps {
   closeRatingPopup: () => void;

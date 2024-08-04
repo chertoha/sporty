@@ -1,4 +1,4 @@
-import sources from "utils/quoteImageSources";
+import sources from "utils/data/quoteImageSources";
 
 import { FC } from "react";
 import { Box } from "@mui/material";

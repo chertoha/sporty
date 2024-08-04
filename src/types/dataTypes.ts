@@ -1,3 +1,4 @@
+import ExercisesList from "components/ExercisesList";
 import { FilterKey } from "helpers/filterKey";
 
 export type Filter = {
@@ -28,6 +29,8 @@ export type Exercise = {
   time: number;
   popularity: number;
 };
+
+export type ExerciseKey = keyof Exercise;
 
 export type ExerciseData = {
   page: number;
