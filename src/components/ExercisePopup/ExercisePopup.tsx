@@ -33,7 +33,10 @@ const ExercisePopup: FC<IExercisePopupProps> = ({ id, openRatingPopup }) => {
         </Box>
       </Meta>
 
-      <Toolbar openRatingPopup={openRatingPopup} />
+      <Toolbar
+        openRatingPopup={openRatingPopup}
+        exersise={exercise}
+      />
     </Wrapper>
   );
 };

@@ -1,22 +1,13 @@
 import FavoritesQuoteList from "components/QuoteCards/FavoritesQuoteList";
 import styles from "./Favorites.styled";
-
-import { Box, Container, Typography } from "@mui/material";
-import { useGetExercisesQuery } from "../../redux/exercises/exercisesApi";
 import FavoriteCardList from "components/FavoriteCardList";
 
-const Favorites = () => {
-  const { data } = useGetExercisesQuery({
-    bodypart: "waist",
-    equipment: "",
-    // keyword: "asdasdasdasdasd",
-    keyword: "asdasdasdasdasd",
-    limit: 10,
-    muscles: "",
-    page: 1,
-  });
+import { useSelector } from "react-redux";
+import { Box, Container, Typography } from "@mui/material";
+import { selectFavorites } from "../../redux/favorites/selectors";
 
-  if (!data) return null;
+const Favorites = () => {
+  const favorites = useSelector(selectFavorites);
 
   return (
     <Box component="section">
@@ -27,14 +18,14 @@ const Favorites = () => {
           </Box>
 
           <Box sx={styles.cards}>
-            {data.results.length !== 0 ? (
-              <FavoriteCardList list={data.results} />
+            {favorites.length !== 0 ? (
+              <FavoriteCardList list={favorites} />
             ) : (
               <Box sx={styles.notFound}>
                 <Typography sx={styles.notFoundText}>
-                  It appears that you haven't added any exercises to your
-                  favorites yet. To get started, you can add exercises that you
-                  like to your favorites for easier access in the future.
+                  It appears that you haven't added any exercises to your favorites yet. To get
+                  started, you can add exercises that you like to your favorites for easier access
+                  in the future.
                 </Typography>
               </Box>
             )}

@@ -1,4 +1,9 @@
-export class SessionStorage<T> {
+export interface Storage<T> {
+  set(value: T): void;
+  get(): T | null;
+}
+
+export class SessionStorage<T> implements Storage<T> {
   constructor(private key: string) {}
 
   set(value: T): void {
@@ -11,7 +16,7 @@ export class SessionStorage<T> {
   }
 }
 
-export class LocalStorage<T> {
+export class LocalStorage<T> implements Storage<T> {
   constructor(private key: string) {}
 
   set(value: T): void {

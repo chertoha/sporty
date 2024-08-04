@@ -1,18 +1,19 @@
 import CardRating from "./CardRating";
 import styles from "./ExerciseCard.styled";
 
+import { FC } from "react";
 import { Button, Chip, IconButton, Stack } from "@mui/material";
 import { ReactComponent as TrashIcon } from "assets/images/icons/trash.svg";
 import { ReactComponent as ArrowIcon } from "assets/images/icons/arrow.svg";
-import { FC } from "react";
 
 interface ICardHeaderProps {
   type: "exercise" | "favorite";
   rating: number;
   open: () => void;
+  remove: () => void;
 }
 
-const CardHeader: FC<ICardHeaderProps> = ({ type, rating, open }) => {
+const CardHeader: FC<ICardHeaderProps> = ({ type, rating, open, remove }) => {
   return (
     <Stack
       direction="row"
@@ -37,6 +38,7 @@ const CardHeader: FC<ICardHeaderProps> = ({ type, rating, open }) => {
           <IconButton
             aria-label="delete"
             sx={styles.trash}
+            onClick={remove}
           >
             <TrashIcon
               width={16}
