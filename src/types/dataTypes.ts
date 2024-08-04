@@ -1,4 +1,3 @@
-import ExercisesList from "components/ExercisesList";
 import { FilterKey } from "helpers/filterKey";
 
 export type Filter = {

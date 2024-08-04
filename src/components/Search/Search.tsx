@@ -4,7 +4,6 @@ import { SearchField } from "./Search.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearch } from "../../redux/search/selectors";
 import { updateSearch } from "../../redux/search/slice";
-import { useState } from "react";
 
 const Search = () => {
   const dispatch = useDispatch();
