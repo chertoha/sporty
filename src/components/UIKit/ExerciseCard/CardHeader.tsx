@@ -10,9 +10,10 @@ interface ICardHeaderProps {
   type: "exercise" | "favorite";
   rating: number;
   open: () => void;
+  remove: () => void;
 }
 
-const CardHeader: FC<ICardHeaderProps> = ({ type, rating, open }) => {
+const CardHeader: FC<ICardHeaderProps> = ({ type, rating, open, remove }) => {
   return (
     <Stack
       direction="row"
@@ -37,6 +38,7 @@ const CardHeader: FC<ICardHeaderProps> = ({ type, rating, open }) => {
           <IconButton
             aria-label="delete"
             sx={styles.trash}
+            onClick={remove}
           >
             <TrashIcon
               width={16}

@@ -11,6 +11,8 @@ import { Box } from "@mui/material";
 import { Exercise } from "types/dataTypes";
 import { useModalWindow } from "hooks/useModalWindow";
 import { ViewportSize } from "hooks/useWindowSize";
+import { useDispatch } from "react-redux";
+import { removeFavorite } from "../../../redux/favorites/slice";
 
 interface IExerciseCardProps {
   type?: "exercise" | "favorite";
@@ -19,13 +21,11 @@ interface IExerciseCardProps {
   viewport: ViewportSize;
 }
 
-const ExerciseCard: FC<IExerciseCardProps> = ({
-  type = "exercise",
-  viewport,
-  exercise,
-}) => {
+const ExerciseCard: FC<IExerciseCardProps> = ({ type = "exercise", viewport, exercise }) => {
   const { _id, name, rating } = exercise;
   const { isOpen, close, open } = useModalWindow();
+
+  const dispatch = useDispatch();
 
   const [shouldRate, setShouldRate] = useState<boolean>(false);
   const openRatingPopup = () => setShouldRate(true);
@@ -42,6 +42,7 @@ const ExerciseCard: FC<IExerciseCardProps> = ({
         type={type}
         rating={rating}
         open={open}
+        remove={() => dispatch(removeFavorite(_id))}
       />
 
       <CardName
