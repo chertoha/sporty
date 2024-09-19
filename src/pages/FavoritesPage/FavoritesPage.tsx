@@ -8,7 +8,9 @@ const FavoritesPage = () => {
         <title>Favorites</title>
         <meta
           name="description"
-          content="Page to save favorite exersises"
+
+          content="sport exercises webb app favorites page"
+
         />
       </Helmet>
       <Favorites />;
