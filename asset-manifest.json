@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/sporty/static/css/main.58b7f044.css",
-    "main.js": "/sporty/static/js/main.2f172ee2.js",
-    "static/js/575.b0d8b33f.chunk.js": "/sporty/static/js/575.b0d8b33f.chunk.js",
-    "static/js/99.3bc7e4e9.chunk.js": "/sporty/static/js/99.3bc7e4e9.chunk.js",
+    "main.js": "/sporty/static/js/main.a7d5319f.js",
+    "static/js/575.5a6f8a3e.chunk.js": "/sporty/static/js/575.5a6f8a3e.chunk.js",
+    "static/js/99.8c4b09f6.chunk.js": "/sporty/static/js/99.8c4b09f6.chunk.js",
     "static/js/787.2023ac86.chunk.js": "/sporty/static/js/787.2023ac86.chunk.js",
     "static/js/852.b96fdb14.chunk.js": "/sporty/static/js/852.b96fdb14.chunk.js",
     "static/media/hero-desktop@2x.jpg": "/sporty/static/media/hero-desktop@2x.587eac5ce54846e49d24.jpg",
@@ -13,11 +13,11 @@
     "static/media/hero-tab@1x.jpg": "/sporty/static/media/hero-tab@1x.1f5bce68e81ddc16845d.jpg",
     "static/media/hero-thumbnail.jpg": "/sporty/static/media/hero-thumbnail.2d6bcebc963d6ee5ab17.jpg",
     "static/media/hero-mob@1x.jpg": "/sporty/static/media/hero-mob@1x.028da91adf97743374cc.jpg",
+    "index.html": "/sporty/index.html",
     "static/media/runner.svg": "/sporty/static/media/runner.2e222a79ae07974d70b2d6912ae7668d.svg",
     "static/media/instagram.svg": "/sporty/static/media/instagram.258c254825bc9fb10e78c12e88434179.svg",
     "static/media/sun.svg": "/sporty/static/media/sun.e308112694f4464bc3de8a1261e6ef15.svg",
     "static/media/quotes.svg": "/sporty/static/media/quotes.d38c0b1ab666122e728be1bd72d39874.svg",
-    "index.html": "/sporty/index.html",
     "static/media/logo.svg": "/sporty/static/media/logo.bc4b8a474e1d8e1be951aaeca5a43810.svg",
     "static/media/dumbbell.svg": "/sporty/static/media/dumbbell.61244ae5e15cd3778b3de1367111a307.svg",
     "static/media/youtube.svg": "/sporty/static/media/youtube.d12b499bb8449bb75ecf7b0c534f0f10.svg",
@@ -29,14 +29,14 @@
     "static/media/arrow.svg": "/sporty/static/media/arrow.e524a8ed02f2cca5e0e77ca8521cd2a5.svg",
     "static/media/close.svg": "/sporty/static/media/close.f5964d30cd4c351f6e048b3f3da468a5.svg",
     "main.58b7f044.css.map": "/sporty/static/css/main.58b7f044.css.map",
-    "main.2f172ee2.js.map": "/sporty/static/js/main.2f172ee2.js.map",
-    "575.b0d8b33f.chunk.js.map": "/sporty/static/js/575.b0d8b33f.chunk.js.map",
-    "99.3bc7e4e9.chunk.js.map": "/sporty/static/js/99.3bc7e4e9.chunk.js.map",
+    "main.a7d5319f.js.map": "/sporty/static/js/main.a7d5319f.js.map",
+    "575.5a6f8a3e.chunk.js.map": "/sporty/static/js/575.5a6f8a3e.chunk.js.map",
+    "99.8c4b09f6.chunk.js.map": "/sporty/static/js/99.8c4b09f6.chunk.js.map",
     "787.2023ac86.chunk.js.map": "/sporty/static/js/787.2023ac86.chunk.js.map",
     "852.b96fdb14.chunk.js.map": "/sporty/static/js/852.b96fdb14.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58b7f044.css",
-    "static/js/main.2f172ee2.js"
+    "static/js/main.a7d5319f.js"
   ]
 }
