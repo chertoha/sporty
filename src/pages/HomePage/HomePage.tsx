@@ -5,10 +5,10 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Title</title>
+        <title>Sporty</title>
         <meta
           name="description"
-          content="description content"
+          content="sport exercises webb app"
         />
       </Helmet>
 
