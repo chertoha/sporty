@@ -4,11 +4,13 @@ import styles from "./Home.styled";
 import Loader from "components/Loader";
 import MainQuoteList from "components/QuoteCards/MainQuoteList";
 
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { Outlet } from "react-router";
 
 const Home = () => {
+  const [isSearchVisible, setIsSearchVisible] = useState<boolean>(false);
+
   return (
     <>
       <Hero />
@@ -25,7 +27,7 @@ const Home = () => {
             <Typography variant="h2">Exercises</Typography>
 
             <Box sx={styles.nav}>
-              <FilterNav />
+              <FilterNav isSearchVisible={isSearchVisible} />
             </Box>
           </Stack>
 
@@ -36,7 +38,7 @@ const Home = () => {
           >
             <Box sx={styles.filter}>
               <Suspense fallback={<Loader />}>
-                <Outlet />
+                <Outlet context={{ setIsSearchVisible }} />
               </Suspense>
             </Box>
 

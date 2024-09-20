@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { subscriptionFormSchema } from "utils/validation/validationSchemas";
 import { validationErrorMessage } from "styles/common";
+import { useSubscribeMutation } from "../../redux/subscription/subscriptionApi";
+import Loader from "components/Loader";
 
 export type SubscriptionFormValues = {
   email: string;
@@ -13,6 +15,8 @@ export type SubscriptionFormValues = {
 const initialValues: SubscriptionFormValues = { email: "" };
 
 const SubscriptionForm = () => {
+  const [subscribe, { isLoading }] = useSubscribeMutation();
+
   const {
     register,
     handleSubmit,
@@ -26,7 +30,14 @@ const SubscriptionForm = () => {
   const onSubmit = (values: SubscriptionFormValues) => {
     console.log(values);
 
-    reset(initialValues);
+    subscribe({ ...values })
+      .unwrap()
+      .then(() => {
+        reset(initialValues);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
@@ -34,9 +45,7 @@ const SubscriptionForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >
-      <Typography sx={styles.text}>
-        Subscribe and learn about new exercises!
-      </Typography>
+      <Typography sx={styles.text}>Subscribe and learn about new exercises!</Typography>
 
       <FormControl sx={styles.control}>
         <TextField
@@ -60,9 +69,12 @@ const SubscriptionForm = () => {
         type="submit"
         variant="contained"
         sx={styles.button}
+        disabled={isLoading}
       >
         Send
       </Button>
+
+      {isLoading && <Loader />}
     </form>
   );
 };

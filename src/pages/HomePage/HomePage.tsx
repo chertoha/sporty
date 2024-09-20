@@ -8,7 +8,7 @@ const HomePage = () => {
         <title>Sporty</title>
         <meta
           name="description"
-          content="sport exercises webb app"
+          content="Sporty is a web service for those who are looking for exersises"
         />
       </Helmet>
 
